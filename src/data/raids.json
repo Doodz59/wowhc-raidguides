@@ -1,0 +1,7 @@
+[
+  { "id": "molten-core", "name": "Molten Core" },
+  { "id": "blackwing-lair", "name": "Blackwing Lair" },
+  {"id":"zul-gurub", "name":"Zul Gurub"},
+  { "id": "aq20", "name": "Ahn'Qiraj 20" },
+  { "id": "aq40", "name": "Ahn'Qiraj 40" }
+]

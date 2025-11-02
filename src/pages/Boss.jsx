@@ -4,7 +4,7 @@ import SpellList from '../components/SpellList';
 import PositionDiagram from '../components/PositionDiagram';
 import BossCard from '../components/BossCard';
 import Consumables from '../components/Consumables';
-import consumablesDataArray from '../data/consumables.json'; // import statique
+import consumablesDataArray from '../data/consumables.json'; 
 
 export default function Boss() {
   const { raidId, type, bossId } = useParams();
@@ -12,7 +12,7 @@ export default function Boss() {
   const [boss, setBoss] = useState(null);
   const [bossIndex, setBossIndex] = useState(-1);
 
-  // transformer le tableau en objet pour lookup par id
+  
   const consumablesData = {};
   consumablesDataArray.forEach(c => { consumablesData[c.id] = c; });
 
@@ -28,7 +28,7 @@ export default function Boss() {
 
         setRaid(raidData);
         setBoss(index !== -1 ? list[index] : null);
-        setBossIndex(index); // garde -1 si pas trouvé
+        setBossIndex(index); 
       })
       .catch(err => {
         console.error(err);
@@ -47,7 +47,7 @@ export default function Boss() {
   const prevBoss = bossIndex > 0 ? list[bossIndex - 1] : null;
   const nextBoss = bossIndex >= 0 && bossIndex < list.length - 1 ? list[bossIndex + 1] : null;
 
-  // Merge consommables avec données globales
+  
   const mergedConsumables = (boss.consumables || []).map(item => {
     const global = consumablesData[item.id] || {};
     return {
@@ -55,7 +55,7 @@ export default function Boss() {
       name: global.name || item.name || 'Unnamed consumable',
       icon: global.icon || item.icon || '/images/consumables/default.png',
       quantity: item.quantity || 0,
-      classes: item.classes || global.classes || [] // priorité aux classes définies sur le boss
+      classes: item.classes || global.classes || [] 
     };
   });
 

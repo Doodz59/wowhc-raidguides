@@ -9,7 +9,7 @@ export default function RaidMap({ raidId, raid }) {
 
   const editMode = true; // pin location tool
 
-  // === Gestion du clic sur la carte ===
+
   const handleMapClick = async (e) => {
     if (!editMode) return;
 
@@ -31,7 +31,7 @@ export default function RaidMap({ raidId, raid }) {
     console.log("📍 Coordonnées copiées :", coords);
   };
 
-  // === Préparation des pins depuis le JSON ===
+
   const pins = [
     ...raid.bosses.map((boss) => ({
       id: boss.id,
@@ -55,7 +55,7 @@ export default function RaidMap({ raidId, raid }) {
 
   return (
     <div className="relative w-full max-w-5xl mx-auto mt-8">
-      {/* === Image du raid === */}
+
       <img
         src={`/images/maps/${raidId}.jpg`}
         alt={`${raid.name} map`}
@@ -65,7 +65,7 @@ export default function RaidMap({ raidId, raid }) {
         onClick={handleMapClick}
       />
 
-      {/* === Affichage des pins === */}
+  
       {pins.map((pin) =>
         pin.positions.map((pos, i) => (
           <RaidPin
@@ -78,7 +78,7 @@ export default function RaidMap({ raidId, raid }) {
         ))
       )}
 
-      {/* === Mode édition : affichage des coordonnées + message === */}
+  
       {editMode && clickPos && (
         <div className="fixed bottom-5 left-5 bg-black/80 text-yellow-300 px-3 py-2 rounded-md text-sm font-mono border border-yellow-500 shadow-lg z-50">
           <div>{clickPos}</div>

@@ -4,7 +4,7 @@ export default function BossCard({ boss, raidId, type = 'boss' }) {
   const imageUrl =
     Array.isArray(boss.image) && boss.image.length > 0
       ? boss.image[0]
-      : '/images/default-boss.png'; // fallback image
+      : '/images/default-boss.png'; 
 
   return (
     <Link to={`/raid/${raidId}/${type}/${boss.id}`} className="boss-card block">

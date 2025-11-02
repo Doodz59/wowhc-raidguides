@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import raids from '../data/raids.json'; // JSON de tous les raids
+import raids from '../data/raids.json'; 
 
 export default function Navbar() {
   return (
@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="text-2xl font-heading text-gold font-bold">WoW Classic Raids</div>
 
       <ul className="flex items-center gap-6">
-        {/* Onglet Raid avec menu déroulant */}
+       
         <li className="relative group">
           <button className="font-heading text-gold hover:text-yellow-400 font-semibold">
             Raids ▼

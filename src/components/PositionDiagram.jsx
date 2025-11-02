@@ -15,7 +15,7 @@ export default function PositionDiagram() {
     );
   }
 
-  // On ne prend que les images de position (champ 'position')
+
   const images = boss.position ?? [];
 
   if (images.length === 0) {
@@ -38,7 +38,7 @@ export default function PositionDiagram() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Flèche gauche */}
+   
       {images.length > 1 && (
         <button
           onClick={prevImage}
@@ -48,15 +48,15 @@ export default function PositionDiagram() {
         </button>
       )}
 
-      {/* Image */}
+     
       <img
         key={currentImage}
-        src={currentImage} // champ 'position' directement
+        src={currentImage} 
         alt={`Diagramme de position pour ${boss.name}`}
         className="max-w-full max-h-full object-contain rounded-md transition-all duration-500"
       />
 
-      {/* Flèche droite */}
+ 
       {images.length > 1 && (
         <button
           onClick={nextImage}
@@ -66,7 +66,6 @@ export default function PositionDiagram() {
         </button>
       )}
 
-      {/* Indicateur */}
       {images.length > 1 && (
         <div className="absolute bottom-2 bg-gray-700 bg-opacity-50 text-white px-2 py-1 rounded text-sm">
           {currentIndex + 1} / {images.length}

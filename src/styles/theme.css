@@ -28,6 +28,91 @@ h1, h2, h3, h4 {
   text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
+/* --- Home Raid Selection (WoW-HC style) --- */
+
+.home-container {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #1a1812 0%, #0b0a08 100%);
+  padding: 3rem 1rem;
+}
+
+.raid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.raid-card {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  background: rgba(25, 20, 10, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.raid-card.available:hover {
+  transform: scale(1.05);
+  border-color: #e6b74c;
+  box-shadow:
+    0 0 15px rgba(255, 215, 100, 0.5),
+    inset 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.raid-card.unavailable {
+  opacity: 0.6;
+  filter: grayscale(80%);
+  cursor: not-allowed;
+}
+
+/* Image du raid */
+.raid-card .raid-image {
+  height: 180px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Overlay sombre au hover */
+.raid-card.available:hover .raid-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.2), transparent 70%);
+  opacity: 0.7;
+}
+
+/* Titre du raid */
+.raid-card h2 {
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0.8rem 0.5rem;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+/* Work in progress overlay */
+.raid-card .wip-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 5, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bca96a;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border-radius: 12px;
+}
+
+
 /* --- Raid Page Layout --- */
 .raid-header {
   text-align: center;

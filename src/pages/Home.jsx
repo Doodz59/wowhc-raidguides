@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import raids from "../data/raids.json"; // ton fichier raids.json
-import "../styles/theme.css"; // pour garder ton style général
+import raids from "../data/raids.json"; 
+import "../styles/theme.css"; 
 
 export default function Home() {
-  // Liste des raids déjà disponibles (tu en ajouteras ici plus tard)
+ 
   const availableRaids = ["molten-core"];
 
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <div className="max-w-5xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-heading mb-4">Hardcore Raid Guides</h1>
         <p className="text-gray-400">
-          Sélectionne un raid pour découvrir les stratégies, positions et mécaniques clés.
+         Select a raid to discover key strategies, positions, and mechanics.
         </p>
       </div>
 

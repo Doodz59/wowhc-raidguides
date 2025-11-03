@@ -10,7 +10,7 @@ export default function PositionDiagram() {
   if (!boss) {
     return (
       <div className="w-full h-64 border border-dashed border-gray-700 rounded-md flex items-center justify-center text-gray-500">
-        Boss non trouvé
+        Boss not found
       </div>
     );
   }
@@ -21,7 +21,7 @@ export default function PositionDiagram() {
   if (images.length === 0) {
     return (
       <div className="w-full h-64 border border-dashed border-gray-700 rounded-md flex items-center justify-center text-gray-500">
-        Pas d'image de position disponible
+        no images yet
       </div>
     );
   }

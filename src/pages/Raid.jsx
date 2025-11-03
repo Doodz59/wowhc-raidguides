@@ -10,7 +10,7 @@ export default function Raid() {
   const [raid, setRaid] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Prépare un dictionnaire pour accès rapide par id
+
   const consumablesData = {};
   consumablesDataArray.forEach(c => {
     consumablesData[c.id] = c;
@@ -41,9 +41,7 @@ export default function Raid() {
   if (loading) return <div className="text-gray-400 p-4">Loading raid...</div>;
   if (!raid) return <div className="text-gray-400 p-4">Raid not found.</div>;
 
-  // ===========================
-  // 🔥 Fusion de tous les consommables (raid + boss + trash)
-  // ===========================
+
 
   const consumablesMap = {};
 
@@ -64,7 +62,6 @@ export default function Raid() {
       } else {
         consumablesMap[key].quantity += item.quantity || 0;
 
-        // fusionne les classes sans doublons
         const prevClasses = Array.isArray(consumablesMap[key].classes)
           ? consumablesMap[key].classes
           : [];
@@ -76,18 +73,16 @@ export default function Raid() {
     });
   };
 
-  // 1️⃣ Consommables généraux du raid
+ 
   addConsumables(raid.consumables);
 
-  // 2️⃣ Consommables de chaque boss / trash
+ 
   const allBosses = [...(raid.bosses || []), ...(raid.trash || [])];
   allBosses.forEach(boss => addConsumables(boss.consumables));
 
   const totalConsumables = Object.values(consumablesMap);
 
-  // ===========================
-  // 🎨 Rendu de la page
-  // ===========================
+ 
 
   return (
     <div className="p-6 text-gray-200">

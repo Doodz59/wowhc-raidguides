@@ -84,7 +84,7 @@ export default function RaidMap({ raidId, raid }) {
           <div>{clickPos}</div>
           {copied && (
             <div className="text-green-400 text-xs mt-1 animate-pulse">
-              📋 Coordonnées copiées !
+              📋 Coordinates copied!
             </div>
           )}
         </div>

@@ -4,10 +4,10 @@ import "../styles/theme.css";
 export default function RaidPin({ pin, hoveredId, setHoveredId, uniqueKey }) {
   const { id, name, type, top, left, image, raidId, mainMechanic } = pin;
 
-  // Pour le tooltip, on ne l'affiche que si ce pin spécifique est survolé
+
   const isHovered = hoveredId === uniqueKey;
 
-  // Pour l'effet hover de tous les pins identiques
+
   const isAnyHovered = hoveredId?.startsWith(id);
 
   return (

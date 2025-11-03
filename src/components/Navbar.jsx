@@ -4,7 +4,9 @@ import raids from '../data/raids.json';
 export default function Navbar() {
   return (
     <nav className=" px-6 py-3 flex items-center justify-between">
-      <div className="text-2xl font-heading text-gold font-bold">WoW Classic Raids</div>
+      <Link to="/" className="text-2xl font-heading text-gold font-bold hover:text-yellow-400 transition-colors">
+        WoW Classic Raids
+      </Link>
 
       <ul className="flex items-center gap-6">
        
@@ -13,7 +15,7 @@ export default function Navbar() {
             Raids ▼
           </button>
 
-          {/* Menu déroulant */}
+        
           <ul className="absolute left-0 mt-2 w-56 bg-gray-800 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all">
             {raids.map((raid) => (
               <li key={raid.id} className="border-b border-gray-700 last:border-b-0">
@@ -28,7 +30,7 @@ export default function Navbar() {
           </ul>
         </li>
 
-        {/* Autres onglets */}
+   
         <li>
           <Link to="/" className="font-heading text-gold hover:text-yellow-400 font-semibold">Accueil</Link>
         </li>

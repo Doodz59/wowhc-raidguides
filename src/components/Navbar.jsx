@@ -2,40 +2,19 @@ import { Link } from 'react-router-dom';
 import raids from '../data/raids.json'; 
 
 export default function Navbar() {
+  const handleUnavailable = (name) => {
+    alert(`${name} — Work in progress 🛠️`);
+  };
+
   return (
-    <nav className=" px-6 py-3 flex items-center justify-between">
+    <nav className="flex items-center justify-between">
+      
+     
       <Link to="/" className="text-2xl font-heading text-gold font-bold hover:text-yellow-400 transition-colors">
         WoW Classic Raids
       </Link>
 
-      <ul className="flex items-center gap-6">
-       
-        <li className="relative group">
-          <button className="font-heading text-gold hover:text-yellow-400 font-semibold">
-            Raids ▼
-          </button>
-
-        
-          <ul className="absolute left-0 mt-2 w-56 bg-gray-800 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all">
-            {raids.map((raid) => (
-              <li key={raid.id} className="border-b border-gray-700 last:border-b-0">
-                <Link
-                  to={`/raid/${raid.id}`}
-                  className="block px-5 py-2 hover:bg-gray-700 hover:text-yellow-400 font-heading text-gold"
-                >
-                  {raid.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </li>
-
-   
-        <li>
-          <Link to="/" className="font-heading text-gold hover:text-yellow-400 font-semibold">Accueil</Link>
-        </li>
-     
-      </ul>
+      
     </nav>
   );
 }

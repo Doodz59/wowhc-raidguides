@@ -3,7 +3,7 @@
 /* Import WoW-like font (Cinzel for titles, Lora for text) */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lora:wght@400;500&display=swap');
 
-/* Background + color palette */
+
 body {
   background: radial-gradient(ellipse at center, #1b1a17 0%, #0e0d0b 100%);
   background-attachment: fixed;
@@ -12,7 +12,35 @@ body {
   line-height: 1.6;
 }
 
-/* Scrollbar stylized */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.home-container,
+.raid-page,
+nav,
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -21,14 +49,14 @@ body {
   border-radius: 10px;
 }
 
-/* --- Headings --- */
+
 h1, h2, h3, h4 {
   font-family: 'Cinzel', serif;
   color: #d4af37;
   text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
-/* --- Home Raid Selection (WoW-HC style) --- */
+
 
 .home-container {
   min-height: 100vh;
@@ -69,7 +97,6 @@ h1, h2, h3, h4 {
   cursor: not-allowed;
 }
 
-/* Image du raid */
 .raid-card .raid-image {
   height: 180px;
   width: 100%;
@@ -78,7 +105,7 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* Overlay sombre au hover */
+
 .raid-card.available:hover .raid-image::after {
   content: "";
   position: absolute;
@@ -87,7 +114,7 @@ h1, h2, h3, h4 {
   opacity: 0.7;
 }
 
-/* Titre du raid */
+
 .raid-card h2 {
   font-family: 'Cinzel', serif;
   color: #d4af37;
@@ -97,7 +124,7 @@ h1, h2, h3, h4 {
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
 
-/* Work in progress overlay */
+
 .raid-card .wip-overlay {
   position: absolute;
   inset: 0;
@@ -113,11 +140,11 @@ h1, h2, h3, h4 {
 }
 
 
-/* --- Raid Page Layout --- */
+
 .raid-header {
   text-align: center;
   padding: 3rem 0 2rem;
-  background: url('/images/parchment-texture-dark.jpg') center/cover no-repeat;
+  
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   box-shadow: inset 0 -10px 30px rgba(0, 0, 0, 0.7);
 }
@@ -132,7 +159,7 @@ h1, h2, h3, h4 {
 }
 
 
-/* --- Boss Cards (final WoW-HC style hover) --- */
+
 .boss-card {
   background: rgba(30, 25, 15, 0.4);
   border: 1px solid rgba(212, 175, 55, 0.15);
@@ -169,11 +196,11 @@ h1, h2, h3, h4 {
 .tooltip-boss-card {
   background: rgba(60, 45, 20, 0.9);
   border: 1px solid #e6b74c;
-  color: #ffd700; /* text-gold */
+  color: #ffd700; 
   font-weight: 600;
-  font-size: 0.875rem; /* text-sm */
-  padding: 0.25rem 0.5rem; /* px-3 py-1 approximatif */
-  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; 
+  padding: 0.25rem 0.5rem; 
+  border-radius: 0.375rem;
   box-shadow:
     0 0 12px rgba(255, 215, 100, 0.4),
     0 0 25px rgba(255, 180, 60, 0.2),
@@ -186,7 +213,7 @@ h1, h2, h3, h4 {
 
 
 
-/* --- Spell list --- */
+
 .spell-list {
   background: rgba(20, 17, 10, 0.8);
   border: 1px solid rgba(212, 175, 55, 0.2);
@@ -198,14 +225,14 @@ h1, h2, h3, h4 {
   margin: 0.3rem 0;
 }
 
-/* --- Position diagram --- */
+
 .position-diagram img {
   border: 2px solid rgba(212, 175, 55, 0.3);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 
-/* --- Navigation & Footer --- */
+
 nav {
   background: rgba(10, 8, 5, 0.9);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
@@ -231,7 +258,7 @@ footer {
   color: #bba86e;
 }
 
-/* --- Buttons --- */
+
 .btn {
   display: inline-block;
   background: linear-gradient(145deg, #3a2e1b, #1e180f);

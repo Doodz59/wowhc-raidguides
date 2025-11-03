@@ -1,7 +1,7 @@
 [
-  { "id": "molten-core", "name": "Molten Core" },
-  { "id": "blackwing-lair", "name": "Blackwing Lair" },
-  {"id":"zul-gurub", "name":"Zul Gurub"},
-  { "id": "aq20", "name": "Ahn'Qiraj 20" },
-  { "id": "aq40", "name": "Ahn'Qiraj 40" }
+  { "id": "molten-core", "name": "Molten Core", "available": true },
+  { "id": "blackwing-lair", "name": "Blackwing Lair", "available": false },
+  { "id": "zul-gurub", "name": "Zul Gurub", "available": false },
+  { "id": "aq20", "name": "Ahn'Qiraj 20", "available": false },
+  { "id": "aq40", "name": "Ahn'Qiraj 40", "available": false }
 ]

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import raidData from '../data/molten-core.json';
 
@@ -7,6 +7,13 @@ export default function PositionDiagram() {
   const boss = raidData.bosses.find((b) => b.id === bossId);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const images = boss?.position ?? [];
+
+  // Reset l'image courante chaque fois que le boss change
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [bossId]);
+
   if (!boss) {
     return (
       <div className="w-full h-64 border border-dashed border-gray-700 rounded-md flex items-center justify-center text-gray-500">
@@ -14,9 +21,6 @@ export default function PositionDiagram() {
       </div>
     );
   }
-
-
-  const images = boss.position ?? [];
 
   if (images.length === 0) {
     return (
@@ -38,7 +42,6 @@ export default function PositionDiagram() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-   
       {images.length > 1 && (
         <button
           onClick={prevImage}
@@ -48,15 +51,13 @@ export default function PositionDiagram() {
         </button>
       )}
 
-     
       <img
-        key={currentImage}
-        src={currentImage} 
+        key={currentImage} // forcer la ré-affichage quand l'image change
+        src={currentImage}
         alt={`Diagramme de position pour ${boss.name}`}
         className="max-w-full max-h-full object-contain rounded-md transition-all duration-500"
       />
 
- 
       {images.length > 1 && (
         <button
           onClick={nextImage}

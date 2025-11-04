@@ -7,7 +7,7 @@ export default function RaidMap({ raidId, raid }) {
   const [copied, setCopied] = useState(false);
 
 
-  const editMode = true; // pin location tool
+  const editMode = false; // pin location tool
 
 
   const handleMapClick = async (e) => {

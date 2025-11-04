@@ -31,11 +31,28 @@
       "mapPos": { "top": 36, "left": 65 },
       "image": ["/images/bosses/lucifron.png"],
       "position": ["/images/position/lucifron.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Curse the whole raid, adds can MC.",
       "spells": [
-        { "id": 1, "name": "Impending Doom", "desc": "A curse that deals periodic shadow damage." },
-        { "id": 2, "name": "Lucifron's Curse", "desc": "Increases the cost of abilities and spells by 100% for 5 minutes." }
+        { "id": 1, "name": "Impending Doom", "desc": "Inflicts 2000 shadow damage to nearby enemies after 10 sec" },
+        { "id": 2, "name": "Lucifron's Curse", "desc": "Curses nearby enemies, increasing the costs of their spells and abilities by 100% for 5 min. This cost increase applies to all spells and abilities, whether they cost mana, rage, or energy." }
+        
       ],
+       "adds": [
+    {
+      "name": "Flamewaker Protector",
+      "spells": [
+        { "id": 1, "name": "Dominate Mind", "desc": "Controls a random player for 15 seconds." },
+        { "id": 2, "name": "Cleave", "desc": " 180° cleave up to 5 nearby targets." }
+      ]
+    }
+  ],
+  "roles": [
+  {
+    "classes": ["Mage", "Druid"],
+    "desc": "be ready to start decursing once restorative potion is off."
+  }
+],
+
       "consumables": [
         {
           "id": "restorative_potion",
@@ -44,7 +61,7 @@
         }
         
       ],
-      "strategy": "Assign decursers quickly to remove Lucifron’s Curse. Spread out to reduce shadow damage and focus down the two Flamewaker Protectors first."
+      "strategy": "Kill adds first, melees be aware of your position to avoid cleave. NO AOE/CLEAVE to avoid kill your Mind control friend. \nLucifron will cast on entire raid curses few seconds after the start of the fight : consume your restorative potion when you see the debuff."
     },
     {
       "id": "magmadar",
@@ -52,11 +69,24 @@
       "mapPos": { "top": 21, "left": 69 },
       "image": ["/images/bosses/magmadar.png"],
       "position": ["/images/position/magmadar.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Spit fire in the room, don't stand in the fire, fire hurt .",
       "spells": [
-        { "id": 1, "name": "Panic", "desc": "Fears nearby enemies for 8 seconds." },
-        { "id": 2, "name": "Lava Bomb", "desc": "Creates a fire patch dealing fire damage over time." }
+        {"id": 1, "name": "Panic", "desc": "Fears nearby enemies for 8 seconds." },
+        {"id": 2, "name": "Lava Bomb", "desc": "Target a random ennemy player, and spit a Lava bomb dealing 3200 fire damage over 8sec." },
+        {"id": 3, "name": "Frenzy", "desc":"Increase his attack dammage" },
+        {"id": 4, "name": "Lava Breath​​", "desc": "Cast a breath in front of him, dealing around 1100 damage"},
+        {"id": 5, "name":" Magma Spit", "desc":"  deals 100 Fire damage and an additional 75 Fire damage every 3 seconds for 30 seconds. Stacks up to 3 times on nearby ennemies"}
       ],
+      "roles": [
+  {
+    "classes": ["Hunter"],
+    "desc": "Coordinate a rotation of Tranquilizing Shot to dispel Frenzy as soon as possible."
+  },  
+  {
+    "classes": ["Priest"],
+    "desc": "Keep Fear Ward on the main tank and reapply it when it fades."
+  }
+],
       "consumables": [
         {
           "id": "fire_protection",

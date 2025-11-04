@@ -84,7 +84,7 @@
   },  
   {
     "classes": ["Priest"],
-    "desc": "Keep Fear Ward on the main tank and reapply it when it fades."
+    "desc": "Keep Fear Ward on the main tank and reapply it when it fades. Try to apply as much fear ward you can before the fight(warrior don't need it, they have enough tools)"
   }
 ],
       "consumables": [
@@ -95,7 +95,7 @@
         }
         
       ],
-      "strategy": "Use Fear Ward or Tremor Totems to handle Panic. Keep the raid spread and move out of Lava Bomb patches. Hunters should maintain Tranquilizing Shot on cooldown."
+      "strategy": "Prepot a GFPP, use a other one if it's consummed. Melees do not go in until he uses his first panic. Casters and healers be spread in the room. Don't stay in the fire."
     },
     {
       "id": "gehennas",
@@ -103,11 +103,27 @@
       "mapPos": { "top": 48, "left": 33 },
       "image": ["/images/bosses/gehennas.png"],
       "position": ["/images/position/gehennas.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Prepot GSPP, don't stay in rain of fire.",
       "spells": [
-        { "id": 1, "name": "Gehennas' Curse", "desc": "Reduces healing received by 75%." },
-        { "id": 2, "name": "Rain of Fire", "desc": "Deals fire damage in an area." }
+        { "id": 1, "name": "Shadow Bolt​", "desc": "2000-2500 point shadow bolt on one random non-tank target." },
+        { "id": 2, "name": "Rain of Fire", "desc": "Deals fire damage in an area for 925 to 1075 Fire damage every 2 sec. for 6 sec." }
       ],
+      "adds": [
+    {
+      "name": "Flamewaker Elites",
+      "spells": [
+        { "id": 1, "name": "Fist of Ragnaros​", "desc": "Stuns nearby enemies for 4 seconds." },
+        { "id": 2, "name": "Sunder Armor​", "desc": " reducing target armor by 1000 per Sunder Armor. Lasts 20 sec. Can stack up to 20 times." },
+        { "id": 3, "name": "Strike", "desc":"Strikes at an enemy, inflicting normal damage plus 35."}
+      ]
+    }
+  ],
+  "roles": [
+  {
+    "classes": ["Priest"],
+    "desc": "Put shadow resistance on everyone"
+  }
+],
       "consumables": [
         {
           "id": "free_action_potion",
@@ -126,7 +142,7 @@
         }
         
       ],
-      "strategy": "Tank Gehennas away from his adds. Kill the adds first, then the boss. Avoid Rain of Fire zones and dispel the healing reduction curse immediately."
+      "strategy": "Prepot a GSPP and GFPP, kills adds first ( cleave and AOE allowed). Melee pop a FAP to counter Fist of Ragnaros effect"
     },
     {
       "id": "garr",
@@ -275,7 +291,8 @@
       "id": "firelord",
       "name": "Firelord",
        "mapPos": [{ "top": 17, "left": 35 },
-                 { "top": 45, "left": 75 }
+                 { "top": 45, "left": 75 },
+                 { "top": 19, "left": 50 }
     ],
       "image": ["/images/trash/firelord.png"],
       "position": ["/images/position/firelord.png"],

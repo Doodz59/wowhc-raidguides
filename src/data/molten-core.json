@@ -150,11 +150,30 @@
       "mapPos": { "top": 70, "left": 31 },
       "image": ["/images/bosses/garr.png"],
       "position": ["/images/position/garr.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Dispell your buff, better to boon for this boss.",
       "spells": [
-        { "id": 1, "name": "Antimagic Pulse", "desc": "Dispels magic effects from nearby enemies." }
+        { "id": 1, "name": "Antimagic Pulse", "desc": "Dispels magic effects from nearby enemies." },
+        {"id":2, "name":"Magma shackles", "desc":"reduce movement speed by 40%"}
       ],
-      "strategy": "Each add must be off-tanked and killed one by one. Assign warlocks to banish specific adds. Focus on control and avoid breaking banishes early."
+      "adds": [
+    {
+      "name": "Firesworn",
+      "spells": [
+        { "id": 1, "name": "Immolate​", "desc": "Inflicts 760 to 840 Fire damage to an enemy and scorches it for an additional 380 to 420 damage every 3 sec. for 21 sec." },
+        { "id": 2, "name": "Eruption​", "desc": " when they die, they explodes, inflicting 1850 to 2150 Fire damage to nearby enemies and make them fly" },
+        {"id":3, "name":"Separation Anxiety​","desc":"If they are too far away from Garr, they will increase their damagee"}
+      ]
+    }
+  ],
+      "roles": [
+  {
+    "classes": ["Mage","Druid","warlock"],
+    "desc": "Use all buffs you have, The more buffs you have, the more likely you are to have a useless one dispelled ."
+  },
+  {"classes":["warlock"],
+"desc":"banish one Firesworn"}
+],
+      "strategy": "Adds will be tanked away from boss, healer must focus the add tank. Kill Garr first. Don't AOE adds once they reached 25%. Garr tank will pick up one add at the time, kill the add once he is on position. Melee go out before add die, or you could fly into some packs"
     },
     {
       "id": "baron-geddon",
@@ -162,11 +181,18 @@
       "mapPos": { "top": 79, "left": 52 },
       "image": ["/images/bosses/baron-geddon.png"],
       "position": ["/images/position/baron-geddon.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "go away from raid if you have living bomb.",
       "spells": [
-        { "id": 1, "name": "Living Bomb", "desc": "Afflicts a random player who will explode after 8 seconds." },
-        { "id": 2, "name": "Ignite Mana", "desc": "Burns mana and deals fire damage over time." }
+        { "id": 1, "name": "Living Bomb", "desc": "Afflicts a random player who will explode after 10 seconds. when explode it will also be send into the air and take fall damage. THIS SPELL CAN CRIT " },
+        { "id": 2, "name": "Ignite Mana", "desc": " removes 400 mana per tick and does 400 damage to the target" },
+        {"id":3,"name":"Inferno","desc":"Fire AOE around him, dealing more damage each pulse, last 10 seconds"}
       ],
+      "roles": [
+  {
+    "classes": ["Mage", "Druid"],
+    "desc": "Dispell Ignite mana, prio healers>casters>tank>melees."
+  }
+],
       "consumables": [
         {
           "id": "fire_protection",
@@ -174,7 +200,7 @@
           "classes": ["tank", "caster","healer","melee"]  
         }
 ],
-      "strategy": "Players with Living Bomb must move away from the raid. Use fire protection potions and avoid standing near mana users if Ignite Mana is active."
+      "strategy": " Prepot GFPP. Players with Living Bomb must move away from the raid( see position, go to white dot).Melees run away when he start casting inferno, do not go back until it's off ( last tick can OS you)"
     },
     {
       "id": "shazzrah",
@@ -185,11 +211,20 @@
         "/images/position/shazzrah1.png",
         "/images/position/shazzrah2.png"
       ],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Arcane explosion and teleport.",
       "spells": [
-        { "id": 1, "name": "Arcane Explosion", "desc": "Deals arcane damage to all nearby enemies." },
-        { "id": 2, "name": "Gate of Shazzrah", "desc": "Teleports to a random target and follows with Arcane Explosion." }
+        { "id": 1, "name": "Arcane Explosion", "desc": "Deals 925 tp 1075 arcane damage to all nearby enemies." },
+        {"id":2,"name":"Shazzrah's Curse​","desc":"Increases the magical damage taken by nearby enemies by 100% for 5 min."},
+        { "id": 3, "name": "Gate of Shazzrah", "desc": "Teleports to a random target and reset his threat." },
+        {"id":4,"name":"Magic Grounding","desc":"Reduce the magical damage taken by 50% for 30sec"},
+        {"id":5,"name":"Counterspell","desc":"Counters the spellcasting of nearby enemies, preventing any spell from that school of magic from being cast for 10 sec."}
       ],
+      "roles": [
+  {
+    "classes": ["Mage", "Druid"],
+    "desc": "Dicurse Shazzrah's curse, big prio on tank and meleee that go in."
+  }
+],
       "consumables": [
          {
           "id": "arcane_protection",
@@ -197,7 +232,7 @@
           "classes": ["tank", "caster","healer","melee"]
         }
 ],
-      "strategy": "Casters should stay spread. Melee must move out quickly after each teleport. Interrupt Arcane Explosion whenever possible."
+      "strategy": "Prepot a GAPP. 3 Groups would be made : one big pumper melee group ( if you are a fresh 60 melee, you will stay out for this fight) and two casters and healers group. Healers must be spread equally into this two groups. One tank will also be in each of this group. One Shazzrah teleport, run to his previous position."
     },
     {
       "id": "golemagg",
@@ -207,8 +242,20 @@
       "position": ["/images/position/golemagg.png"],
       "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
       "spells": [
-        { "id": 1, "name": "Magma Splash", "desc": "Applies a stacking fire damage debuff to melee attackers." }
+        { "id": 1, "name": "Magma Splash", "desc": "Applies a stacking fire damage debuff to melee attackers." },
+        {"id":2,"name":"Golemagg's trust","desc":"Buff the core Ragers with 500 increased damages and +50% attack speed if they are close "},
+        {"id":3,"name":"Pyroblast","desc":"Target a random play and deal 2000 fire damages and put a DoT that deal 200damage every 3sec for 12sec"},
+        {"id":4,"name":"Earthquake","desc":"At 10% health, Golemagg will start cast it, dealing around 1400 damage per tick."}
       ],
+      "adds": [
+    {
+      "name": "Core Ragers",
+      "spells": [
+        { "id": 1, "name": "Mangle", "desc": "Reduces movement by 50% and deals 300 physical damage every 2 seconds" }
+      ]
+    }
+  ],
+  
       "consumables": [
         {
           "id": "fire_protection",
@@ -220,7 +267,7 @@
           "classes": ["tank","melee"]
         }
 ],
-      "strategy": "Tank him in place and swap tanks to manage debuff stacks. Kill the Core Ragers last after Golemagg dies."
+      "strategy": "Tank him in place and swap tanks to manage debuff stacks. Melees stop fight once you reach around 6 or 7 stacks debuff. Melees go out once he reached 10% hp or be ready to pop a Free Action Potion"
     },
     {
       "id": "sulfuron",
@@ -230,9 +277,28 @@
       "position": ["/images/position/sulfuron.png"],
       "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
       "spells": [
-        { "id": 1, "name": "Inspire", "desc": "Buffs nearby allies, increasing their damage." }
+        { "id": 1, "name": "Inspire", "desc": "Buffs nearby allies, increasing their damage by 25% and double his attack speed." },
+        {"id":2,"name":"Hand of Ragnaros​","desc":"Inflict fire damages, knocking them back and stun them for 2sec"},
+        {"id":3,"name":"Flame Spear","desc":"Aoe fire spell"}
       ],
-      "strategy": "Each Flamewaker Priest should be tanked separately. Focus on killing healers first, then Sulfuron. Interrupt heals whenever possible."
+            "adds": [
+    {
+      "name": "Flamewalker Priest",
+      "spells": [
+        { "id": 1, "name": "Dark Mending", "desc": "heal a ally for237500 to 262500 damage" },
+        {"id":2,"name":"Dark Strike","desc":"Consecrates the caster's weapon, inflicting 1026 to 1134 additional damage on its next attack"},
+        {"id":3,"name":"Immolate","desc":"deal fire damage to the target"},
+        {"id":4,"name":"Shadow word : Pain","desc":"inflicting Shadow damage to an enemy every 3 sec. for 15 sec."}
+      ]
+    }
+  ],
+  "roles": [
+  {
+    "classes": ["Rogue", "Warrior"],
+    "desc": "Be ready to kick/pummel Dark mending, short casting time."
+  }
+],
+      "strategy": "The key of the fight is to kick/pummel Dark Mending. one rogue and warrior will be assign to each add, to stop first or second cast. Cleave/AOE them to death then kill Sulfuron."
     },
     {
       "id": "majordomo",
@@ -242,8 +308,32 @@
       "position": ["/images/position/majordomo.png"],
       "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
       "spells": [
-        { "id": 1, "name": "Magic Reflection", "desc": "Reflects spells for a short duration." }
+        { "id": 1, "name": "Aegis of Ragnaros​", "desc": "Absorb 30 000damages, reflect 250 damages on melee attacks and heal himself to full." },
+        {"id":2,"name":"Magic Reflection","desc":"Reflect any spell cast, last 10sec"},
+        {"id":3,"name":"Damage shield","desc":"Reflext 100 damages on melee attacks, last 10sec"},
+        {"id":4,"name":"Teleport","desc":"Teleport a player into the fiery pit and reset threat"},
+        {"id":5,"name":"Blast Wave","desc":"Deal fire damage to nearby ennemies"}
       ],
+      "adds": [
+    {
+      "name": "Flamewalker Elites",
+      "spells": [
+        { "id": 1, "name": "Fire Blast", "desc": "deal fire damage to his target" },
+        {"id":2,"name":"Magic Reflection","desc":"Reflect any spell cast, last 10sec"},
+        {"id":3,"name":"Damage shield","desc":"Reflext 100 damages on melee attacks, last 10sec"},
+        {"id":4,"name":"Blast Wave","desc":"Deal fire damage to nearby ennemies"}
+      ]
+    },
+    {
+      "name": "Flamewalker Healers",
+      "spells": [
+        { "id": 1, "name": "Shadow Bolts", "desc": "Target a random player and deal around 1000 shadow damages" },
+        {"id":2,"name":"Magic Reflection","desc":"Reflect any spell cast, last 10sec"},
+        {"id":3,"name":"Damage shield","desc":"Reflext 100 damages on melee attacks, last 10sec"},
+        {"id":4,"name":"Heal","desc":"Can heal any other mob"}
+      ]
+    }
+  ],
       "consumables": [
          {
           "id": "shadow_protection",
@@ -251,7 +341,7 @@
           "classes": ["tank", "caster","healer","melee"]
         }
 ],
-      "strategy": "Manage adds carefully — kill healers first, then elites. Do not kill Executus himself; he yields after his guards are defeated."
+      "strategy": "This fight is mostly control fight. Flamewalker Elites can't be CC, they have to be tanked or kited (depends of group composition). Flamewalker Healers can be sheep.  nuke one add at the time, do not cleave to avoid breaking sheep. Follow carefully the new skull target. After 4 adds died, remains adds will be immune to sheep. Mages and warlock be really carefull with Magic reflection, you can blast yourself really quickly"
     },
     {
       "id": "ragnaros",

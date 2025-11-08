@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import RaidPin from "./RaidPin";
+import RaidRoutes from "./RaidRoutes";
 
 export default function RaidMap({ raidId, raid }) {
   const [hoveredId, setHoveredId] = useState(null);
   const [clickPos, setClickPos] = useState(null);
   const [copied, setCopied] = useState(false);
 
+  const editMode = false;
 
-  const editMode = false; // pin location tool
-
+  const containerRef = useRef(null);
 
   const handleMapClick = async (e) => {
     if (!editMode) return;
@@ -30,7 +31,6 @@ export default function RaidMap({ raidId, raid }) {
 
     console.log("📍 Coordonnées copiées :", coords);
   };
-
 
   const pins = [
     ...raid.bosses.map((boss) => ({
@@ -54,8 +54,7 @@ export default function RaidMap({ raidId, raid }) {
   ];
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto mt-8">
-
+    <div className="relative w-full max-w-5xl mx-auto mt-8" ref={containerRef}>
       <img
         src={`/images/maps/${raidId}.jpg`}
         alt={`${raid.name} map`}
@@ -65,7 +64,10 @@ export default function RaidMap({ raidId, raid }) {
         onClick={handleMapClick}
       />
 
-  
+      {/* Routes dynamiques */}
+      <RaidRoutes raidId={raidId} containerRef={containerRef} />
+
+      {/* Pins */}
       {pins.map((pin) =>
         pin.positions.map((pos, i) => (
           <RaidPin
@@ -78,7 +80,7 @@ export default function RaidMap({ raidId, raid }) {
         ))
       )}
 
-  
+      {/* Coordonnées mode édition */}
       {editMode && clickPos && (
         <div className="fixed bottom-5 left-5 bg-black/80 text-yellow-300 px-3 py-2 rounded-md text-sm font-mono border border-yellow-500 shadow-lg z-50">
           <div>{clickPos}</div>

@@ -1,9 +1,15 @@
 import { useEffect, useRef } from "react";
 
-export default function Route({ points, color, active, svgWidth, svgHeight, speed = 100 }) {
-  const pathRef = useRef(null); // référence au <path>
+export default function Route({
+  points,
+  color = "brown", // couleur symbolique (sera stylisée ci-dessous)
+  active,
+  svgWidth,
+  svgHeight,
+  speed = 120,
+}) {
+  const pathRef = useRef(null);
 
-  // Génère le 'd' à partir des points et des dimensions du SVG
   const buildPath = () => {
     if (!svgWidth || !svgHeight || !points) return "";
     return points
@@ -22,31 +28,45 @@ export default function Route({ points, color, active, svgWidth, svgHeight, spee
 
     const path = pathRef.current;
     const length = path.getTotalLength();
-
-    // Déterminer la durée en fonction de la longueur et de la vitesse
-    // speed = pixels / seconde
     const duration = length / speed;
 
     path.style.transition = "none";
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
-    path.getBoundingClientRect(); // force repaint
+    path.getBoundingClientRect();
 
-    // Appliquer la transition avec durée calculée
-    path.style.transition = `stroke-dashoffset ${duration}s linear`;
+    path.style.transition = `stroke-dashoffset ${duration}s ease-out`;
     path.style.strokeDashoffset = active ? 0 : length;
   }, [d, active, speed]);
+
+  // Déterminer le style selon la couleur (marron ou doré)
+  const isBrown = color === "brown";
+  const strokeColor = isBrown ? "#7b5a2b" : "#d4af37"; // marron ou doré
+  const glow1 = isBrown
+    ? "rgba(212, 175, 55, 0.4)" // doré léger autour du brun
+    : "rgba(123, 90, 43, 0.5)"; // brun doux autour du doré
+  const glow2 = isBrown
+    ? "rgba(255, 215, 100, 0.2)"
+    : "rgba(255, 215, 100, 0.6)";
 
   return (
     <path
       ref={pathRef}
       d={d}
-      stroke={color}
-      strokeWidth="3"
+      stroke={strokeColor}
+      strokeWidth="4"
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      opacity={active ? 1 : 0}
+      opacity={active ? 1 : 0.8}
+      style={{
+        filter: `
+          drop-shadow(0 0 5px ${glow1})
+          drop-shadow(0 0 10px ${glow2})
+        `,
+        transition: "opacity 0.5s ease-in-out",
+        animation: active ? "routePulse 2.5s ease-in-out infinite alternate" : "none",
+      }}
     />
   );
 }

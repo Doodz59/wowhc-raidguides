@@ -24,6 +24,7 @@ export default function RaidRoutes({ raidId }) {
 
   return (
     <div className="absolute inset-0 z-10">
+      {/* --- SVG des routes --- */}
       <svg ref={svgRef} className="absolute inset-0 w-full h-full pointer-events-none">
         {routes.map((route) => (
           <Route
@@ -33,24 +34,28 @@ export default function RaidRoutes({ raidId }) {
             active={activeRoute === route.id}
             svgWidth={dimensions.width}
             svgHeight={dimensions.height}
-             speed={600}
+            speed={600}
           />
         ))}
       </svg>
 
-      <div className="absolute top-4 left-4 flex gap-3 pointer-events-auto z-20">
-        {routes.map((route) => (
-          <button
-            key={route.id}
-            onClick={() => setActiveRoute(activeRoute === route.id ? null : route.id)}
-            onMouseEnter={() => setActiveRoute(route.id)}
-            onMouseLeave={() => setActiveRoute(null)}
-            className="px-4 py-2 rounded-xl text-white font-medium transition border-2 border-white hover:border-yellow-400"
-            style={{ backgroundColor: route.color }}
-          >
-            {route.name}
-          </button>
-        ))}
+      {/* --- Boutons de sélection --- */}
+      <div className="absolute top-4 left-4 flex gap-4 pointer-events-auto z-20">
+        {routes.map((route) => {
+          const isActive = activeRoute === route.id;
+
+          return (
+            <button
+              key={route.id}
+              onClick={() => setActiveRoute(isActive ? null : route.id)}
+              onMouseEnter={() => setActiveRoute(route.id)}
+              onMouseLeave={() => setActiveRoute(null)}
+              className={`raidroute-btn ${isActive ? "active" : ""}`}
+            >
+              {route.name}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

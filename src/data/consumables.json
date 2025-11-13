@@ -1,0 +1,71 @@
+[
+  
+  {
+    "id": "fire_protection",
+    "name": "Greater Fire Protection Potion",
+    "icon": "/images/consumables/fire_protection.png"
+    
+  },
+  {
+    "id": "shadow_protection",
+    "name": "Greater Shadow Protection Potion",
+    "icon": "/images/consumables/shadow_protection.png"
+    
+  },
+  {
+    "id": "arcane_protection",
+    "name": "Greater Arcane Protection Potion",
+    "icon": "/images/consumables/arcane_protection.png"
+    
+  },
+    {
+    "id": "nature_protection",
+    "name": "Greater Nature Protection Potion",
+    "icon": "/images/consumables/nature_protection.png"
+    
+  },
+     {
+    "id": "frost_protection",
+    "name": "Greater Frost Protection Potion",
+    "icon": "/images/consumables/frost_protection.png"
+    
+  },
+
+  {
+    "id": "flask_titan",
+    "name": "Flask of the Titans",
+    "icon": "/images/consumables/flask_titans.png"
+    
+  },
+  
+    {
+    "id": "free_action_potion",
+    "name": "Free Action Potion",
+    "icon": "/images/consumables/free_action_potion.png"
+    
+  },
+      {
+    "id": "restorative_potion",
+    "name": "Restorative potion",
+    "icon": "/images/consumables/restorative_potion.png"
+    
+  },
+  {
+    "id": "elixir_fortitude",
+    "name": "Elixir of Fortitude",
+    "icon": "/images/consumables/elixir_fortitude.png"
+    
+  },
+    {
+    "id": "rumsey_rum_black_label",
+    "name": "Rumsey Rum Black Label",
+    "icon": "/images/consumables/rumsey_rum_black_label.png"
+    
+  },
+  {
+    "id": "stamina_food",
+    "name": "Stamina Food",
+    "icon": "/images/consumables/stamina_food.png"
+    
+  }
+]

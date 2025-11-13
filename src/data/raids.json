@@ -3,5 +3,7 @@
   { "id": "blackwing-lair", "name": "Blackwing Lair", "available": false },
   { "id": "zul-gurub", "name": "Zul Gurub", "available": false },
   { "id": "aq20", "name": "Ahn'Qiraj 20", "available": false },
-  { "id": "aq40", "name": "Ahn'Qiraj 40", "available": false }
+  { "id": "aq40", "name": "Ahn'Qiraj 40", "available": false },
+  {"id":"world-boss", "name": "World boss", "available":false},
+  {"id":"onyxia-lair","name":" Onyxia's Lair", "available":false}
 ]

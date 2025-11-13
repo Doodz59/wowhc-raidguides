@@ -62,12 +62,8 @@ export default function RaidMap({ raidId, raid }) {
           editMode ? "cursor-crosshair" : ""
         }`}
         onClick={handleMapClick}
-      />
-
-      {/* Routes dynamiques */}
-      <RaidRoutes raidId={raidId} containerRef={containerRef} />
-
-      {/* Pins */}
+      />    
+      <RaidRoutes raidId={raidId} containerRef={containerRef} />  
       {pins.map((pin) =>
         pin.positions.map((pos, i) => (
           <RaidPin
@@ -80,7 +76,7 @@ export default function RaidMap({ raidId, raid }) {
         ))
       )}
 
-      {/* Coordonnées mode édition */}
+    
       {editMode && clickPos && (
         <div className="fixed bottom-5 left-5 bg-black/80 text-yellow-300 px-3 py-2 rounded-md text-sm font-mono border border-yellow-500 shadow-lg z-50">
           <div>{clickPos}</div>

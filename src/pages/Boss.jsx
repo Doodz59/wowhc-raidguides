@@ -30,6 +30,8 @@ export default function Boss() {
         setRaid(raidData);
         setBoss(index !== -1 ? list[index] : null);
         setBossIndex(index);
+
+        window.scrollTo(0, 0);
       })
       .catch((err) => {
         console.error(err);
@@ -63,10 +65,9 @@ export default function Boss() {
 
   return (
     <div className="p-6 text-gray-200 overflow-x-hidden">
-      {/* Titre principal */}
+  
       <h1 className="text-3xl font-heading text-gold mb-2">{boss.name}</h1>
-
-      {/* Consommables */}
+    
       {mergedConsumables.length > 0 && (
         <>
           <h2 className="text-2xl font-heading text-gold mt-4 mb-2">Consumables</h2>
@@ -74,7 +75,6 @@ export default function Boss() {
         </>
       )}
 
-      {/* Capacités du boss */}
       {boss.spells?.length > 0 && (
         <>
           <h2 className="text-2xl font-heading text-gold mt-6 mb-2">
@@ -83,8 +83,7 @@ export default function Boss() {
           <SpellList spells={boss.spells} />
         </>
       )}
-
-      {/* Capacités des adds */}
+ 
       {boss.adds?.length > 0 &&
         boss.adds.map((add, i) => (
           <div key={i}>
@@ -95,8 +94,7 @@ export default function Boss() {
           </div>
         ))}
 
-      {/* Stratégie */}
-      {boss.strategy && (
+         {boss.strategy && (
         <>
           <h2 className="text-2xl  font-heading text-gold mt-6 mb-2">Strategy</h2>
           <p className="mb-6 whitespace-pre-line">{boss.strategy}</p>
@@ -146,16 +144,13 @@ export default function Boss() {
   </>
 )}
 
-
-      {/* Position */}
       {boss.position?.length > 0 && (
         <>
           <h2 className="text-2xl font-heading text-gold mt-6 mb-2">Positioning</h2>
           <PositionDiagram />
         </>
       )}
-
-      {/* Navigation entre boss */}
+      
       <div className="mt-8 flex justify-between items-center">
         {prevBoss ? (
           <BossCard boss={prevBoss} raidId={raidId} type={type} />

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 export default function Route({
   points,
-  color = "brown", // couleur symbolique (sera stylisée ci-dessous)
+  color = "brown", 
   active,
   svgWidth,
   svgHeight,

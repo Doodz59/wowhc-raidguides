@@ -52,7 +52,7 @@ export default function PositionDiagram() {
       )}
 
       <img
-        key={currentImage} // forcer la ré-affichage quand l'image change
+        key={currentImage} 
         src={currentImage}
         alt={`Diagramme de position pour ${boss.name}`}
         className="max-w-full max-h-full object-contain rounded-md transition-all duration-500"

@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import BossCard from '../components/BossCard';
 import RaidMap from '../components/RaidMap';
 import Consumables from '../components/Consumables';
-import consumablesDataArray from '../data/consumables.json'; // import statique
-
+import consumablesDataArray from '../data/consumables.json'; 
 export default function Raid() {
   const { raidId } = useParams();
   const [raid, setRaid] = useState(null);

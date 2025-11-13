@@ -240,7 +240,7 @@
       "mapPos": { "top": 58, "left": 69 },
       "image": ["/images/bosses/golemagg.png"],
       "position": ["/images/position/golemagg.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Deal heavy damages to melees, watch your stacks.",
       "spells": [
         { "id": 1, "name": "Magma Splash", "desc": "Applies a stacking fire damage debuff to melee attackers." },
         {"id":2,"name":"Golemagg's trust","desc":"Buff the core Ragers with 500 increased damages and +50% attack speed if they are close "},
@@ -275,7 +275,7 @@
       "mapPos": { "top": 84, "left": 83 },
       "image": ["/images/bosses/sulfuron.png"],
       "position": ["/images/position/sulfuron.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Kick Dark Mending, nuke adds.",
       "spells": [
         { "id": 1, "name": "Inspire", "desc": "Buffs nearby allies, increasing their damage by 25% and double his attack speed." },
         {"id":2,"name":"Hand of Ragnaros​","desc":"Inflict fire damages, knocking them back and stun them for 2sec"},
@@ -306,7 +306,7 @@
       "mapPos": { "top": 66, "left": 84 },
       "image": ["/images/bosses/majordomo.png"],
       "position": ["/images/position/majordomo.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Control fight, always focus new skull target, no AOE or cleave",
       "spells": [
         { "id": 1, "name": "Aegis of Ragnaros​", "desc": "Absorb 30 000damages, reflect 250 damages on melee attacks and heal himself to full." },
         {"id":2,"name":"Magic Reflection","desc":"Reflect any spell cast, last 10sec"},
@@ -349,10 +349,12 @@
       "mapPos": { "top": 54, "left": 56 },
       "image": ["/images/bosses/ragnaros.png"],
       "position": ["/images/position/ragnaros.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Melees be carefull with knockback, mana user ask for lava exit path.",
       "spells": [
-        { "id": 1, "name": "Wrath of Ragnaros", "desc": "Knocks back nearby enemies and deals fire damage." },
-        { "id": 2, "name": "Sons of Flame", "desc": "Summons fire elementals during submerge phase." }
+        { "id": 1, "name": "Wrath of Ragnaros", "desc": "Knocks back nearby enemies, deals fire damage and reduce threat of ennemies hit." },
+        {"id":2,"name":"Hammer of Ragnaros", "desc":"Target a random mana user, and knocks back all players ( exept his target) around him"},
+        {"id":3,"name":"Magma Blast","desc":"cast it if there is no player in his melee range, deal HEAVY damages ( can 1hit any no tank player"}
+        
       ],
       "consumables": [
         {
@@ -362,7 +364,10 @@
         }
         
       ],
-      "strategy": "Stay max range to avoid knockbacks. Manage submerge phases by controlling and killing Sons of Flame quickly. Use fire resist gear."
+      "strategy": ["Ragnaros is a 3phase boss, in Hardcore environment, we want to take him down at the first phase",
+      " Melees be carefull about your position, listen carefully raid lead call to avoid Wrath of Ragnaros. When you go in watch your threat.",
+      "Casters and healers be spread in the whole room, based on number of raid member we can ask you to find a partner. In this case stack on each other.",
+     "When you are knockback by Hammer of Ragnaros DO NOT GO INTO MELEE PACK OR TANK "]
     }
   ],
   "trash": [
@@ -374,48 +379,54 @@
     ],
       "image": ["/images/trash/lava-elemental.png"],
       "position": ["/images/position/lava-elemental.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Stay spread to avoid AoE damage."
+      "mainMechanic": "Pyroclast Barrage - Deals 1500 fire damage over 6 seconds and stuns the target.",
+      "strategy": " tank should face them away of raid, on those packs it's always good to prepot a GFPP"
     },
     {
       "id": "firelord",
       "name": "Firelord",
-       "mapPos": [{ "top": 17, "left": 35 },
+       "mapPos": [{ "top": 16, "left": 37 },
+                  { "top": 15, "left": 34 },
                  { "top": 45, "left": 75 },
-                 { "top": 19, "left": 50 }
+                 { "top": 19, "left": 50 },
+                 { "top": 12, "left": 42 }
     ],
       "image": ["/images/trash/firelord.png"],
       "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
+      "mainMechanic": "Can summon Lava Spawns, focus this instead of Firelord.",
       "strategy": "Interrupt Firelord's casts and prioritize adds first."
     },
     {
       "id": "molten-giant",
       "name": "Molten Giant",
        "mapPos": [{ "top": 20, "left": 32 },
-                 { "top": 13, "left": 35 }
+                 { "top": 13, "left": 35 },
+                 { "top": 23, "left": 51 }
     ],
       "image": ["/images/trash/molten-giant.png"],
       "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
+      "mainMechanic": "stomp up to 8 nearby ennemies.",
+      "strategy": "Always linked with either a other molten giant or molten destroyer, let tank split them before fight."
     },
     {
       "id": "molten-destroyer",
       "name": "Molten Destroyer",
        "mapPos": [{ "top": 18, "left": 32 },
-                 { "top": 12, "left": 36 }
+                 { "top": 12, "left": 36 },
+                 { "top": 25, "left": 51 }
     ],
       "image": ["/images/trash/molten-destroyer.png"],
       "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
+      "mainMechanic": "can easily nuke a non tank, watch your threat.",
+      "strategy": "He can deal around 1000 damage to nearby ennemies, he also hit fast and can cast a instant attack against his target."
+      
     },
     {
       "id": "ancien-core-hound",
       "name": "Ancien Core Hound",
        "mapPos": [{ "top": 73, "left": 43 },
-                 { "top": 28, "left": 49 }
+                 { "top": 28, "left": 49 },
+                 { "top": 16, "left": 41 }
     ],
       "image": ["/images/trash/ancien-core-hound.png"],
       "position": ["/images/position/firelord.png"],
@@ -459,8 +470,10 @@
        {
       "id": "lava-annihilator",
       "name": "Lava Annihilator",
-       "mapPos": [{ "top": 35, "left": 65 },
-                 { "top": 45, "left": 75 }
+       "mapPos": [{ "top": 17, "left": 35 },
+                 { "top": 45, "left": 75 },
+                 { "top": 9, "left": 38 },
+                 { "top": 8, "left": 40 }
     ],
       "image": ["/images/trash/lava-annihilator.png"],
       "position": ["/images/position/firelord.png"],

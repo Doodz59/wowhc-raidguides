@@ -117,7 +117,7 @@
   "mapPos": { "top": 70, "left": 31 },
   "image": ["/images/bosses/garr.png"],
   "position": ["/images/position/garr.png"],
-  "mainMechanic": "Dispels player buffs; using many low-value buffs (“boons”) helps protect important ones.",
+  "mainMechanic": "Dispels player buffs; using many low-value buffs to protect important ones or boon for this fight.",
   "spells": [
     { "id": 1, "name": "Antimagic Pulse", "desc": "Dispels magic effects from nearby enemies." },
     { "id": 2, "name": "Magma Shackles", "desc": "Reduces movement speed by 40%." }

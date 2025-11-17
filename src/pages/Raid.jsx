@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import BossCard from '../components/BossCard';
 import RaidMap from '../components/RaidMap';
 import Consumables from '../components/Consumables';
+import LinkifyText from "../components/LinkifyText";
+
 import consumablesDataArray from '../data/consumables.json'; 
 export default function Raid() {
   const { raidId } = useParams();
@@ -85,12 +87,17 @@ export default function Raid() {
 
   return (
     <div className="p-6 text-gray-200">
-      <h1 className="text-3xl font-heading text-gold mb-4">{raid.name}</h1>
-      <p className="mb-6">{raid.description}</p>
+      <div className="p-6 text-gray-200 leading-relaxed text-justify space-y-4">
+  <h1 className="text-3xl font-heading text-gold mb-4">{raid.name}</h1>
+  <p className="mb-6">
+    <LinkifyText text={raid.description} raid={raid} />
+  </p>
+</div>
+
 
       {totalConsumables.length > 0 && (
         <div>
-          <h2 className="text-xl font-bold mb-3">Consommables pour le raid</h2>
+          <h2 className="text-xl font-bold mb-3">Raid consumables</h2>
           <Consumables items={totalConsumables} />
         </div>
       )}

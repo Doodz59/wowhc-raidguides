@@ -1,7 +1,7 @@
 {
   "id": "molten-core",
   "name": "Molten Core",
-  "description": "A raid deep within Blackrock Mountain, home of Ragnaros the Firelord.",
+  "description": "Molten Core is the first raid in WoW Classic. Its mechanics are relatively simple, making it a great introduction for new players, and no special gear is required to start. However, some bosses and trash packs can be extremely dangerous if mismanaged (e.g., Lava Packs, Shazzrah, Golemagg the Incinerator, Majordomo Executus, Ragnaros). Your main goal as a new player is simple: survive the raid. To achieve this, read this guide carefully, listen to the Raid Leader, and don’t hesitate to ask questions if anything is unclear.",
    "consumables": [
     {
       "id": "flask_titan",
@@ -26,493 +26,589 @@
   ],
   "bosses": [
     {
-      "id": "lucifron",
-      "name": "Lucifron",
-      "mapPos": { "top": 36, "left": 65 },
-      "image": ["/images/bosses/lucifron.png"],
-      "position": ["/images/position/lucifron.png"],
-      "mainMechanic": "Curse the whole raid, adds can MC.",
-      "spells": [
-        { "id": 1, "name": "Impending Doom", "desc": "Inflicts 2000 shadow damage to nearby enemies after 10 sec" },
-        { "id": 2, "name": "Lucifron's Curse", "desc": "Curses nearby enemies, increasing the costs of their spells and abilities by 100% for 5 min. This cost increase applies to all spells and abilities, whether they cost mana, rage, or energy." }
-        
-      ],
-       "adds": [
+  "id": "lucifron",
+  "name": "Lucifron",
+  "mapPos": { "top": 36, "left": 65 },
+  "image": ["/images/bosses/lucifron.png"],
+  "position": ["/images/position/lucifron.png"],
+  "mainMechanic": "Curses the entire raid; adds can Mind Control players.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Impending Doom",
+      "desc": "Inflicts 2000 Shadow damage to nearby enemies after 10 seconds."
+    },
+    {
+      "id": 2,
+      "name": "Lucifron's Curse",
+      "desc": "Curses nearby enemies, increasing the cost of their spells and abilities by 100% for 5 minutes. This applies to all resources: mana, rage, and energy."
+    }
+  ],
+  "adds": [
     {
       "name": "Flamewaker Protector",
       "spells": [
-        { "id": 1, "name": "Dominate Mind", "desc": "Controls a random player for 15 seconds." },
-        { "id": 2, "name": "Cleave", "desc": " 180° cleave up to 5 nearby targets." }
+        {
+          "id": 1,
+          "name": "Dominate Mind",
+          "desc": "Mind Controls a random player for 15 seconds."
+        },
+        {
+          "id": 2,
+          "name": "Cleave",
+          "desc": "180° cleave hitting up to 5 nearby targets."
+        }
       ]
     }
   ],
   "roles": [
-  {
-    "classes": ["Mage", "Druid"],
-    "desc": "be ready to start decursing once restorative potion is off."
-  }
-],
+    {
+      "classes": ["Mage", "Druid"],
+      "desc": "Be ready to decurse as soon as your Restorative Potion wears off."
+    }
+  ],
+  "consumables": [
+    {
+      "id": "restorative_potion",
+      "quantity": 1,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "strategy": "Kill the adds first. Melee players must watch their positioning to avoid cleave. NO AOE or cleave abilities to avoid killing Mind-Controlled allies. Lucifron will apply curses to the entire raid a few seconds into the fight—use your Restorative Potion when you see the debuff."
+},
 
-      "consumables": [
-        {
-          "id": "restorative_potion",
-          "quantity": 1,
-          "classes": ["tank", "caster","healer","melee"]  
-        }
-        
-      ],
-      "strategy": "Kill adds first, melees be aware of your position to avoid cleave. NO AOE/CLEAVE to avoid kill your Mind control friend. \nLucifron will cast on entire raid curses few seconds after the start of the fight : consume your restorative potion when you see the debuff."
-    },
-    {
-      "id": "magmadar",
-      "name": "Magmadar",
-      "mapPos": { "top": 21, "left": 69 },
-      "image": ["/images/bosses/magmadar.png"],
-      "position": ["/images/position/magmadar.png"],
-      "mainMechanic": "Spit fire in the room, don't stand in the fire, fire hurt .",
-      "spells": [
-        {"id": 1, "name": "Panic", "desc": "Fears nearby enemies for 8 seconds." },
-        {"id": 2, "name": "Lava Bomb", "desc": "Target a random ennemy player, and spit a Lava bomb dealing 3200 fire damage over 8sec." },
-        {"id": 3, "name": "Frenzy", "desc":"Increase his attack dammage" },
-        {"id": 4, "name": "Lava Breath​​", "desc": "Cast a breath in front of him, dealing around 1100 damage"},
-        {"id": 5, "name":" Magma Spit", "desc":"  deals 100 Fire damage and an additional 75 Fire damage every 3 seconds for 30 seconds. Stacks up to 3 times on nearby ennemies"}
-      ],
-      "roles": [
-  {
-    "classes": ["Hunter"],
-    "desc": "Coordinate a rotation of Tranquilizing Shot to dispel Frenzy as soon as possible."
-  },  
-  {
-    "classes": ["Priest"],
-    "desc": "Keep Fear Ward on the main tank and reapply it when it fades. Try to apply as much fear ward you can before the fight(warrior don't need it, they have enough tools)"
-  }
-],
-      "consumables": [
-        {
-          "id": "fire_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]  
-        }
-        
-      ],
-      "strategy": "Prepot a GFPP, use a other one if it's consummed. Melees do not go in until he uses his first panic. Casters and healers be spread in the room. Don't stay in the fire."
-    },
-    {
-      "id": "gehennas",
-      "name": "Gehennas",
-      "mapPos": { "top": 48, "left": 33 },
-      "image": ["/images/bosses/gehennas.png"],
-      "position": ["/images/position/gehennas.png"],
-      "mainMechanic": "Prepot GSPP, don't stay in rain of fire.",
-      "spells": [
-        { "id": 1, "name": "Shadow Bolt​", "desc": "2000-2500 point shadow bolt on one random non-tank target." },
-        { "id": 2, "name": "Rain of Fire", "desc": "Deals fire damage in an area for 925 to 1075 Fire damage every 2 sec. for 6 sec." }
-      ],
-      "adds": [
-    {
-      "name": "Flamewaker Elites",
-      "spells": [
-        { "id": 1, "name": "Fist of Ragnaros​", "desc": "Stuns nearby enemies for 4 seconds." },
-        { "id": 2, "name": "Sunder Armor​", "desc": " reducing target armor by 1000 per Sunder Armor. Lasts 20 sec. Can stack up to 20 times." },
-        { "id": 3, "name": "Strike", "desc":"Strikes at an enemy, inflicting normal damage plus 35."}
-      ]
-    }
+   {
+  "id": "magmadar",
+  "name": "Magmadar",
+  "mapPos": { "top": 21, "left": 69 },
+  "image": ["/images/bosses/magmadar.png"],
+  "position": ["/images/position/magmadar.png"],
+  "mainMechanic": "Covers the room with fire; avoid all fire patches, they deal heavy damage.",
+  "spells": [
+    { "id": 1, "name": "Panic", "desc": "Fears nearby enemies for 8 seconds." },
+    { "id": 2, "name": "Lava Bomb", "desc": "Targets a random enemy and launches a Lava Bomb, dealing 3200 Fire damage over 8 seconds." },
+    { "id": 3, "name": "Frenzy", "desc":"Increases his attack speed and damage." },
+    { "id": 4, "name": "Lava Breath", "desc": "A frontal breath attack dealing around 1100 Fire damage." },
+    { "id": 5, "name": "Magma Spit", "desc": "Deals 100 Fire damage plus an additional 75 Fire damage every 3 seconds for 30 seconds. Can stack up to 3 times on nearby enemies." }
   ],
   "roles": [
-  {
-    "classes": ["Priest"],
-    "desc": "Put shadow resistance on everyone"
-  }
-],
-      "consumables": [
-        {
-          "id": "free_action_potion",
-          "quantity": 1,
-          "classes": ["tank", "melee"]  
-        },
-        {
-          "id":"shadow_protection",
-          "quantity":2,
-          "classes":["caster","healer","melee","tank"]
-        },
-        {
-          "id":"fire_protection",
-          "quantity":1,
-          "classes":["caster","healer","melee","tank"]
-        }
-        
-      ],
-      "strategy": "Prepot a GSPP and GFPP, kills adds first ( cleave and AOE allowed). Melee pop a FAP to counter Fist of Ragnaros effect"
+    {
+      "classes": ["Hunter"],
+      "desc": "Coordinate a rotation of Tranquilizing Shot to remove Frenzy as soon as possible."
     },
     {
-      "id": "garr",
-      "name": "Garr",
-      "mapPos": { "top": 70, "left": 31 },
-      "image": ["/images/bosses/garr.png"],
-      "position": ["/images/position/garr.png"],
-      "mainMechanic": "Dispell your buff, better to boon for this boss.",
-      "spells": [
-        { "id": 1, "name": "Antimagic Pulse", "desc": "Dispels magic effects from nearby enemies." },
-        {"id":2, "name":"Magma shackles", "desc":"reduce movement speed by 40%"}
-      ],
-      "adds": [
+      "classes": ["Priest"],
+      "desc": "Keep Fear Ward on the main tank and reapply it when it fades. Precast Fear Ward on as many players as possible before the pull (warriors generally do not need it)."
+    }
+  ],
+  "consumables": [
+    {
+      "id": "fire_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "strategy": "Pre-pot a Greater Fire Protection Potion (GFPP). Use another one if consumed. Melee should not engage until the first Panic is used. Casters and healers must spread out. Do not stand in fire patches."
+},
+
+    {
+  "id": "garr",
+  "name": "Garr",
+  "mapPos": { "top": 70, "left": 31 },
+  "image": ["/images/bosses/garr.png"],
+  "position": ["/images/position/garr.png"],
+  "mainMechanic": "Dispels player buffs; using many low-value buffs (“boons”) helps protect important ones.",
+  "spells": [
+    { "id": 1, "name": "Antimagic Pulse", "desc": "Dispels magic effects from nearby enemies." },
+    { "id": 2, "name": "Magma Shackles", "desc": "Reduces movement speed by 40%." }
+  ],
+  "adds": [
     {
       "name": "Firesworn",
       "spells": [
-        { "id": 1, "name": "Immolate​", "desc": "Inflicts 760 to 840 Fire damage to an enemy and scorches it for an additional 380 to 420 damage every 3 sec. for 21 sec." },
-        { "id": 2, "name": "Eruption​", "desc": " when they die, they explodes, inflicting 1850 to 2150 Fire damage to nearby enemies and make them fly" },
-        {"id":3, "name":"Separation Anxiety​","desc":"If they are too far away from Garr, they will increase their damagee"}
-      ]
-    }
-  ],
-      "roles": [
-  {
-    "classes": ["Mage","Druid","warlock"],
-    "desc": "Use all buffs you have, The more buffs you have, the more likely you are to have a useless one dispelled ."
-  },
-  {"classes":["warlock"],
-"desc":"banish one Firesworn"}
-],
-      "strategy": "Adds will be tanked away from boss, healer must focus the add tank. Kill Garr first. Don't AOE adds once they reached 25%. Garr tank will pick up one add at the time, kill the add once he is on position. Melee go out before add die, or you could fly into some packs"
-    },
-    {
-      "id": "baron-geddon",
-      "name": "Baron Geddon",
-      "mapPos": { "top": 79, "left": 52 },
-      "image": ["/images/bosses/baron-geddon.png"],
-      "position": ["/images/position/baron-geddon.png"],
-      "mainMechanic": "go away from raid if you have living bomb.",
-      "spells": [
-        { "id": 1, "name": "Living Bomb", "desc": "Afflicts a random player who will explode after 10 seconds. when explode it will also be send into the air and take fall damage. THIS SPELL CAN CRIT " },
-        { "id": 2, "name": "Ignite Mana", "desc": " removes 400 mana per tick and does 400 damage to the target" },
-        {"id":3,"name":"Inferno","desc":"Fire AOE around him, dealing more damage each pulse, last 10 seconds"}
-      ],
-      "roles": [
-  {
-    "classes": ["Mage", "Druid"],
-    "desc": "Dispell Ignite mana, prio healers>casters>tank>melees."
-  }
-],
-      "consumables": [
         {
-          "id": "fire_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]  
-        }
-],
-      "strategy": " Prepot GFPP. Players with Living Bomb must move away from the raid( see position, go to white dot).Melees run away when he start casting inferno, do not go back until it's off ( last tick can OS you)"
-    },
-    {
-      "id": "shazzrah",
-      "name": "Shazzrah",
-      "mapPos": { "top": 86, "left": 55 },
-      "image": ["/images/bosses/shazzrah.png"],
-      "position": [
-        "/images/position/shazzrah1.png",
-        "/images/position/shazzrah2.png"
-      ],
-      "mainMechanic": "Arcane explosion and teleport.",
-      "spells": [
-        { "id": 1, "name": "Arcane Explosion", "desc": "Deals 925 tp 1075 arcane damage to all nearby enemies." },
-        {"id":2,"name":"Shazzrah's Curse​","desc":"Increases the magical damage taken by nearby enemies by 100% for 5 min."},
-        { "id": 3, "name": "Gate of Shazzrah", "desc": "Teleports to a random target and reset his threat." },
-        {"id":4,"name":"Magic Grounding","desc":"Reduce the magical damage taken by 50% for 30sec"},
-        {"id":5,"name":"Counterspell","desc":"Counters the spellcasting of nearby enemies, preventing any spell from that school of magic from being cast for 10 sec."}
-      ],
-      "roles": [
-  {
-    "classes": ["Mage", "Druid"],
-    "desc": "Dicurse Shazzrah's curse, big prio on tank and meleee that go in."
-  }
-],
-      "consumables": [
-         {
-          "id": "arcane_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]
-        }
-],
-      "strategy": "Prepot a GAPP. 3 Groups would be made : one big pumper melee group ( if you are a fresh 60 melee, you will stay out for this fight) and two casters and healers group. Healers must be spread equally into this two groups. One tank will also be in each of this group. One Shazzrah teleport, run to his previous position."
-    },
-    {
-      "id": "golemagg",
-      "name": "Golemagg the Incinerator",
-      "mapPos": { "top": 58, "left": 69 },
-      "image": ["/images/bosses/golemagg.png"],
-      "position": ["/images/position/golemagg.png"],
-      "mainMechanic": "Deal heavy damages to melees, watch your stacks.",
-      "spells": [
-        { "id": 1, "name": "Magma Splash", "desc": "Applies a stacking fire damage debuff to melee attackers." },
-        {"id":2,"name":"Golemagg's trust","desc":"Buff the core Ragers with 500 increased damages and +50% attack speed if they are close "},
-        {"id":3,"name":"Pyroblast","desc":"Target a random play and deal 2000 fire damages and put a DoT that deal 200damage every 3sec for 12sec"},
-        {"id":4,"name":"Earthquake","desc":"At 10% health, Golemagg will start cast it, dealing around 1400 damage per tick."}
-      ],
-      "adds": [
-    {
-      "name": "Core Ragers",
-      "spells": [
-        { "id": 1, "name": "Mangle", "desc": "Reduces movement by 50% and deals 300 physical damage every 2 seconds" }
-      ]
-    }
-  ],
-  
-      "consumables": [
+          "id": 1,
+          "name": "Immolate",
+          "desc": "Inflicts 760–840 Fire damage and an additional 380–420 Fire damage every 3 seconds for 21 seconds."
+        },
         {
-          "id": "fire_protection",
-          "quantity": 1,
-          "classes": ["tank","melee"]  
-        }, {
-          "id": "free_action_potion",
-          "quantity": 1,
-          "classes": ["tank","melee"]
+          "id": 2,
+          "name": "Eruption",
+          "desc": "When they die, they explode, dealing 1850–2150 Fire damage to nearby enemies and knocking them back."
+        },
+        {
+          "id": 3,
+          "name": "Separation Anxiety",
+          "desc": "If too far from Garr, their damage increases significantly."
         }
-],
-      "strategy": "Tank him in place and swap tanks to manage debuff stacks. Melees stop fight once you reach around 6 or 7 stacks debuff. Melees go out once he reached 10% hp or be ready to pop a Free Action Potion"
-    },
-    {
-      "id": "sulfuron",
-      "name": "Sulfuron Harbinger",
-      "mapPos": { "top": 84, "left": 83 },
-      "image": ["/images/bosses/sulfuron.png"],
-      "position": ["/images/position/sulfuron.png"],
-      "mainMechanic": "Kick Dark Mending, nuke adds.",
-      "spells": [
-        { "id": 1, "name": "Inspire", "desc": "Buffs nearby allies, increasing their damage by 25% and double his attack speed." },
-        {"id":2,"name":"Hand of Ragnaros​","desc":"Inflict fire damages, knocking them back and stun them for 2sec"},
-        {"id":3,"name":"Flame Spear","desc":"Aoe fire spell"}
-      ],
-            "adds": [
-    {
-      "name": "Flamewalker Priest",
-      "spells": [
-        { "id": 1, "name": "Dark Mending", "desc": "heal a ally for237500 to 262500 damage" },
-        {"id":2,"name":"Dark Strike","desc":"Consecrates the caster's weapon, inflicting 1026 to 1134 additional damage on its next attack"},
-        {"id":3,"name":"Immolate","desc":"deal fire damage to the target"},
-        {"id":4,"name":"Shadow word : Pain","desc":"inflicting Shadow damage to an enemy every 3 sec. for 15 sec."}
       ]
     }
   ],
   "roles": [
-  {
-    "classes": ["Rogue", "Warrior"],
-    "desc": "Be ready to kick/pummel Dark mending, short casting time."
-  }
-],
-      "strategy": "The key of the fight is to kick/pummel Dark Mending. one rogue and warrior will be assign to each add, to stop first or second cast. Cleave/AOE them to death then kill Sulfuron."
+    {
+      "classes": ["Mage", "Druid", "Warlock"],
+      "desc": "Use as many buffs as possible so important ones are less likely to be dispelled."
     },
     {
-      "id": "majordomo",
-      "name": "Majordomo Executus",
-      "mapPos": { "top": 66, "left": 84 },
-      "image": ["/images/bosses/majordomo.png"],
-      "position": ["/images/position/majordomo.png"],
-      "mainMechanic": "Control fight, always focus new skull target, no AOE or cleave",
+      "classes": ["Warlock"],
+      "desc": "Banish one Firesworn."
+    }
+  ],
+  "strategy": "Adds must be tanked far from the boss; healers should focus on the add tanks. Kill Garr first. Do NOT AOE the adds once they reach 25% HP. The Garr tank will bring one add at a time to be killed safely. Melee should move out before an add dies to avoid being knocked back into enemy packs."
+},
+
+    {
+  "id": "baron-geddon",
+  "name": "Baron Geddon",
+  "mapPos": { "top": 79, "left": 52 },
+  "image": ["/images/bosses/baron-geddon.png"],
+  "position": ["/images/position/baron-geddon.png"],
+  "mainMechanic": "Move away from the raid if you have Living Bomb.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Living Bomb",
+      "desc": "Afflicts a random player who will explode after 10 seconds. When it explodes, the player is sent into the air and takes fall damage. THIS SPELL CAN CRIT."
+    },
+    {
+      "id": 2,
+      "name": "Ignite Mana",
+      "desc": "Removes 400 mana per tick and deals 400 damage to the target."
+    },
+    {
+      "id": 3,
+      "name": "Inferno",
+      "desc": "Fire AoE around him, dealing increasing damage with each pulse. Lasts 10 seconds."
+    }
+  ],
+  "roles": [
+    {
+      "classes": ["Mage", "Druid"],
+      "desc": "Dispel Ignite Mana, prioritizing healers > casters > tanks > melee."
+    }
+  ],
+  "consumables": [
+    {
+      "id": "fire_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "strategy": "Prepot GFPP. Players with Living Bomb must move away from the raid (see position, go to the white dot). Melees should run away when he starts casting Inferno and stay out until it ends (the last tick can one-shot you)."
+}
+,
+    {
+  "id": "shazzrah",
+  "name": "Shazzrah",
+  "mapPos": { "top": 86, "left": 55 },
+  "image": [
+    "/images/position/shazzrah1.png",
+    "/images/position/shazzrah2.png"
+  ],
+  "mainMechanic": "Arcane Explosion and teleport.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Arcane Explosion",
+      "desc": "Deals 925 to 1075 Arcane damage to all nearby enemies."
+    },
+    {
+      "id": 2,
+      "name": "Shazzrah's Curse",
+      "desc": "Increases the magical damage taken by nearby enemies by 100% for 5 minutes."
+    },
+    {
+      "id": 3,
+      "name": "Gate of Shazzrah",
+      "desc": "Teleports to a random target and resets his threat."
+    },
+    {
+      "id": 4,
+      "name": "Magic Grounding",
+      "desc": "Reduces magical damage taken by 50% for 30 seconds."
+    },
+    {
+      "id": 5,
+      "name": "Counterspell",
+      "desc": "Counters the spellcasting of nearby enemies, preventing any spell from that school of magic from being cast for 10 seconds."
+    }
+  ],
+  "roles": [
+    {
+      "classes": ["Mage", "Druid"],
+      "desc": "Dispel Shazzrah's Curse. Prioritize tanks and melee who are engaged."
+    }
+  ],
+  "consumables": [
+    {
+      "id": "arcane_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "strategy": "Prepot a GAPP. The raid is divided into 3 groups: one big melee group (if you are a fresh 60 melee, you will stay out for this fight) and two groups of casters and healers. Healers must be spread evenly across the two caster/healer groups. One tank will be in each group. When Shazzrah teleports, run back to his previous position."
+}
+,
+    {
+  "id": "golemagg",
+  "name": "Golemagg the Incinerator",
+  "mapPos": { "top": 58, "left": 69 },
+  "image": ["/images/bosses/golemagg.png"],
+  "position": ["/images/position/golemagg.png"],
+  "mainMechanic": "Deals heavy damage to melee; watch your debuff stacks.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Magma Splash",
+      "desc": "Applies a stacking fire damage debuff to melee attackers."
+    },
+    {
+      "id": 2,
+      "name": "Golemagg's Trust",
+      "desc": "Buffs the Core Ragers with +500 damage and +50% attack speed if they are nearby."
+    },
+    {
+      "id": 3,
+      "name": "Pyroblast",
+      "desc": "Targets a random player, dealing 2000 fire damage and applying a DoT that deals 200 damage every 3 seconds for 12 seconds."
+    },
+    {
+      "id": 4,
+      "name": "Earthquake",
+      "desc": "At 10% health, Golemagg starts casting Earthquake, dealing around 1400 damage per tick."
+    }
+  ],
+  "adds": [
+    {
+      "name": "Core Ragers",
       "spells": [
-        { "id": 1, "name": "Aegis of Ragnaros​", "desc": "Absorb 30 000damages, reflect 250 damages on melee attacks and heal himself to full." },
-        {"id":2,"name":"Magic Reflection","desc":"Reflect any spell cast, last 10sec"},
-        {"id":3,"name":"Damage shield","desc":"Reflext 100 damages on melee attacks, last 10sec"},
-        {"id":4,"name":"Teleport","desc":"Teleport a player into the fiery pit and reset threat"},
-        {"id":5,"name":"Blast Wave","desc":"Deal fire damage to nearby ennemies"}
-      ],
-      "adds": [
+        {
+          "id": 1,
+          "name": "Mangle",
+          "desc": "Reduces movement speed by 50% and deals 300 physical damage every 2 seconds."
+        }
+      ]
+    }
+  ],
+  "consumables": [
+    {
+      "id": "fire_protection",
+      "quantity": 1,
+      "classes": ["tank","melee"]
+    },
+    {
+      "id": "free_action_potion",
+      "quantity": 1,
+      "classes": ["tank"]
+    }
+  ],
+  "strategy": "Tank Golemagg in place and swap tanks to manage debuff stacks. Melee should stop attacking once they reach 6–7 stacks of the debuff."
+}
+  ,
+    {
+  "id": "sulfuron",
+  "name": "Sulfuron Harbinger",
+  "mapPos": { "top": 84, "left": 83 },
+  "image": ["/images/bosses/sulfuron.png"],
+  "position": ["/images/position/sulfuron.png"],
+  "mainMechanic": "Kick Dark Mending, then nuke adds.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Inspire",
+      "desc": "Buffs nearby allies, increasing their damage by 25% and doubling their attack speed."
+    },
+    {
+      "id": 2,
+      "name": "Hand of Ragnaros",
+      "desc": "Inflicts fire damage, knocks back, and stuns targets for 2 seconds."
+    },
+    {
+      "id": 3,
+      "name": "Flame Spear",
+      "desc": "Area-of-effect fire spell."
+    }
+  ],
+  "adds": [
+    {
+      "name": "Flamewalker Priest",
+      "spells": [
+        {
+          "id": 1,
+          "name": "Dark Mending",
+          "desc": "Heals an ally for 237,500 to 262,500 health."
+        },
+        {
+          "id": 2,
+          "name": "Dark Strike",
+          "desc": "Consecrates the caster's weapon, inflicting 1,026 to 1,134 additional damage on its next attack."
+        },
+        {
+          "id": 3,
+          "name": "Immolate",
+          "desc": "Deals fire damage to the target."
+        },
+        {
+          "id": 4,
+          "name": "Shadow Word: Pain",
+          "desc": "Inflicts Shadow damage to an enemy every 3 seconds for 15 seconds."
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "classes": ["Rogue", "Warrior"],
+      "desc": "Be ready to kick or pummel Dark Mending; it has a short cast time."
+    }
+  ],
+  "strategy": "The key to this fight is to kick/pummel Dark Mending. Assign one rogue and one warrior per add to interrupt the first or second cast. After that, cleave or AoE the adds to death, then kill Sulfuron."
+}
+,
+    {
+  "id": "majordomo",
+  "name": "Majordomo Executus",
+  "mapPos": { "top": 66, "left": 84 },
+  "image": ["/images/bosses/majordomo.png"],
+  "position": ["/images/position/majordomo.png"],
+  "mainMechanic": "Control the fight, always focus the new skull target. Avoid AoE or cleave.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Aegis of Ragnaros",
+      "desc": "Absorbs 30,000 damage, reflects 250 damage on melee attacks, and heals himself to full."
+    },
+    {
+      "id": 2,
+      "name": "Magic Reflection",
+      "desc": "Reflects any spell cast. Lasts 10 seconds."
+    },
+    {
+      "id": 3,
+      "name": "Damage Shield",
+      "desc": "Reflects 100 damage on melee attacks. Lasts 10 seconds."
+    },
+    {
+      "id": 4,
+      "name": "Teleport",
+      "desc": "Teleports a player into the fiery pit and resets threat."
+    },
+    {
+      "id": 5,
+      "name": "Blast Wave",
+      "desc": "Deals fire damage to nearby enemies."
+    }
+  ],
+  "adds": [
     {
       "name": "Flamewalker Elites",
       "spells": [
-        { "id": 1, "name": "Fire Blast", "desc": "deal fire damage to his target" },
-        {"id":2,"name":"Magic Reflection","desc":"Reflect any spell cast, last 10sec"},
-        {"id":3,"name":"Damage shield","desc":"Reflext 100 damages on melee attacks, last 10sec"},
-        {"id":4,"name":"Blast Wave","desc":"Deal fire damage to nearby ennemies"}
+        { "id": 1, "name": "Fire Blast", "desc": "Deals fire damage to its target." },
+        { "id": 2, "name": "Magic Reflection", "desc": "Reflects any spell cast. Lasts 10 seconds." },
+        { "id": 3, "name": "Damage Shield", "desc": "Reflects 100 damage on melee attacks. Lasts 10 seconds." },
+        { "id": 4, "name": "Blast Wave", "desc": "Deals fire damage to nearby enemies." }
       ]
     },
     {
       "name": "Flamewalker Healers",
       "spells": [
-        { "id": 1, "name": "Shadow Bolts", "desc": "Target a random player and deal around 1000 shadow damages" },
-        {"id":2,"name":"Magic Reflection","desc":"Reflect any spell cast, last 10sec"},
-        {"id":3,"name":"Damage shield","desc":"Reflext 100 damages on melee attacks, last 10sec"},
-        {"id":4,"name":"Heal","desc":"Can heal any other mob"}
+        { "id": 1, "name": "Shadow Bolt", "desc": "Targets a random player and deals around 1,000 Shadow damage." },
+        { "id": 2, "name": "Magic Reflection", "desc": "Reflects any spell cast. Lasts 10 seconds." },
+        { "id": 3, "name": "Damage Shield", "desc": "Reflects 100 damage on melee attacks. Lasts 10 seconds." },
+        { "id": 4, "name": "Heal", "desc": "Can heal any other mob." }
       ]
     }
   ],
-      "consumables": [
-         {
-          "id": "shadow_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]
-        }
-],
-      "strategy": "This fight is mostly control fight. Flamewalker Elites can't be CC, they have to be tanked or kited (depends of group composition). Flamewalker Healers can be sheep.  nuke one add at the time, do not cleave to avoid breaking sheep. Follow carefully the new skull target. After 4 adds died, remains adds will be immune to sheep. Mages and warlock be really carefull with Magic reflection, you can blast yourself really quickly"
+  "consumables": [
+    {
+      "id": "shadow_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "strategy": "This fight is primarily about control. Flamewalker Elites cannot be CCed; they must be tanked or kited depending on group composition. Flamewalker Healers can be sheeped. Focus one add at a time and avoid cleaving to prevent breaking sheep. Pay close attention to the new skull target. After four adds die, remaining adds become immune to sheep. Mages and Warlocks must be very careful with Magic Reflection, as it can easily backfire."
+}
+,
+    {
+  "id": "ragnaros",
+  "name": "Ragnaros",
+  "mapPos": { "top": 54, "left": 56 },
+  "image": ["/images/bosses/ragnaros.png"],
+  "position": ["/images/position/ragnaros.png"],
+  "mainMechanic": "Melees, be careful with knockbacks. Mana users should be aware of lava exit paths.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Wrath of Ragnaros",
+      "desc": "Knocks back nearby enemies, deals fire damage, and reduces threat of enemies hit."
     },
     {
-      "id": "ragnaros",
-      "name": "Ragnaros",
-      "mapPos": { "top": 54, "left": 56 },
-      "image": ["/images/bosses/ragnaros.png"],
-      "position": ["/images/position/ragnaros.png"],
-      "mainMechanic": "Melees be carefull with knockback, mana user ask for lava exit path.",
-      "spells": [
-        { "id": 1, "name": "Wrath of Ragnaros", "desc": "Knocks back nearby enemies, deals fire damage and reduce threat of ennemies hit." },
-        {"id":2,"name":"Hammer of Ragnaros", "desc":"Target a random mana user, and knocks back all players ( exept his target) around him"},
-        {"id":3,"name":"Magma Blast","desc":"cast it if there is no player in his melee range, deal HEAVY damages ( can 1hit any no tank player"}
-        
-      ],
-      "consumables": [
-        {
-          "id": "fire_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster"]  
-        }
-        
-      ],
-      "strategy": ["Ragnaros is a 3phase boss, in Hardcore environment, we want to take him down at the first phase",
-      " Melees be carefull about your position, listen carefully raid lead call to avoid Wrath of Ragnaros. When you go in watch your threat.",
-      "Casters and healers be spread in the whole room, based on number of raid member we can ask you to find a partner. In this case stack on each other.",
-     "When you are knockback by Hammer of Ragnaros DO NOT GO INTO MELEE PACK OR TANK "]
+      "id": 2,
+      "name": "Hammer of Ragnaros",
+      "desc": "Targets a random mana user and knocks back all other players around them."
+    },
+    {
+      "id": 3,
+      "name": "Magma Blast",
+      "desc": "Casts if no player is in melee range. Deals heavy damage and can one-shot any non-tank player."
     }
+  ],
+  "consumables": [
+    {
+      "id": "fire_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster"]
+    }
+  ],
+  "strategy": [
+    "Ragnaros is a three-phase boss. In a Hardcore environment, the goal is to kill him during the first phase.",
+    "Melees: pay close attention to your positioning and follow raid leader calls to avoid Wrath of Ragnaros. Manage your threat carefully when engaging.",
+    "Casters and healers: spread out across the room. Depending on raid size, you may be asked to pair up. In this case, stack on your partner.",
+    "If knocked back by Hammer of Ragnaros, DO NOT run into melee packs or the tank."
+  ]
+}
+
   ],
   "trash": [
     {
-      "id": "lava-elemental",
-      "name": "Lava Elemental",
-      "mapPos": [{ "top": 35, "left": 65 },
-                 { "top": 45, "left": 75 }
-    ],
-      "image": ["/images/trash/lava-elemental.png"],
-      "position": ["/images/position/lava-elemental.png"],
-      "mainMechanic": "Pyroclast Barrage - Deals 1500 fire damage over 6 seconds and stuns the target.",
-      "strategy": " tank should face them away of raid, on those packs it's always good to prepot a GFPP"
-    },
+  "id": "lava-elemental",
+  "name": "Lava Elemental",
+  "mapPos": [
+    { "top": 35, "left": 65 },
+    { "top": 45, "left": 75 }
+  ],
+  "image": ["/images/trash/lava-elemental.png"],
+  "mainMechanic": "Pyroclast Barrage - Deals 1500 fire damage over 6 seconds and stuns the target.",
+  "strategy": "Tank should face them away from the raid. For these packs, it's always good to prepot a GFPP."
+}
+,
     {
-      "id": "firelord",
-      "name": "Firelord",
-       "mapPos": [{ "top": 16, "left": 37 },
-                  { "top": 15, "left": 34 },
-                 { "top": 45, "left": 75 },
-                 { "top": 19, "left": 50 },
-                 { "top": 12, "left": 42 }
-    ],
-      "image": ["/images/trash/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Can summon Lava Spawns, focus this instead of Firelord.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "firelord",
+  "name": "Firelord",
+  "mapPos": [
+    { "top": 16, "left": 37 },
+    { "top": 15, "left": 34 },
+    { "top": 45, "left": 75 },
+    { "top": 19, "left": 50 },
+    { "top": 12, "left": 42 }
+  ],
+  "image": ["/images/trash/firelord.png"],
+  "mainMechanic": "Can summon Lava Spawns. Focus on killing the adds instead of Firelord.",
+  "strategy": "Interrupt Firelord's casts and prioritize the adds first. These shares spawn points with Lava Annihilator."
+}
+,
     {
-      "id": "molten-giant",
-      "name": "Molten Giant",
-       "mapPos": [{ "top": 20, "left": 32 },
-                 { "top": 13, "left": 35 },
-                 { "top": 23, "left": 51 }
-    ],
-      "image": ["/images/trash/molten-giant.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "stomp up to 8 nearby ennemies.",
-      "strategy": "Always linked with either a other molten giant or molten destroyer, let tank split them before fight."
-    },
+  "id": "molten-giant",
+  "name": "Molten Giant",
+  "mapPos": [
+    { "top": 20, "left": 32 },
+    { "top": 13, "left": 35 },
+    { "top": 23, "left": 51 }
+  ],
+  "image": ["/images/trash/molten-giant.png"],
+  "mainMechanic": "Stomps up to 8 nearby enemies.",
+  "strategy": "Always linked with another Molten Giant or Molten Destroyer. Let the tank separate them before engaging."
+}
+,
     {
-      "id": "molten-destroyer",
-      "name": "Molten Destroyer",
-       "mapPos": [{ "top": 18, "left": 32 },
-                 { "top": 12, "left": 36 },
-                 { "top": 25, "left": 51 }
-    ],
-      "image": ["/images/trash/molten-destroyer.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "can easily nuke a non tank, watch your threat.",
-      "strategy": "He can deal around 1000 damage to nearby ennemies, he also hit fast and can cast a instant attack against his target."
-      
-    },
+  "id": "molten-destroyer",
+  "name": "Molten Destroyer",
+  "mapPos": [
+    { "top": 18, "left": 32 },
+    { "top": 12, "left": 36 },
+    { "top": 25, "left": 51 }
+  ],
+  "image": ["/images/trash/molten-destroyer.png"],
+  "mainMechanic": "Can easily nuke a non-tank, watch your threat.",
+  "strategy": "Deals around 1000 damage to nearby enemies. Hits fast and can perform an instant attack on its target."
+}
+,
     {
-      "id": "ancien-core-hound",
-      "name": "Ancien Core Hound",
-       "mapPos": [{ "top": 73, "left": 43 },
-                 { "top": 28, "left": 49 },
-                 { "top": 16, "left": 41 }
-    ],
-      "image": ["/images/trash/ancien-core-hound.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "ancien-core-hound",
+  "name": "Ancien Core Hound",
+  "mapPos": [
+    { "top": 73, "left": 43 },
+    { "top": 28, "left": 49 },
+    { "top": 16, "left": 41 }
+  ],
+  "image": ["/images/trash/ancien-core-hound.png"],
+  "mainMechanic": "Applies a random debuff to the raid. Be ready to dispel.",
+  "strategy": "Tank should face it away from the raid group. Mages and Paladins should be ready to dispel."
+}
+,
+      {
+  "id": "core-hound-packs",
+  "name": "Core Hound Packs",
+  "mapPos": [
+    { "top": 40, "left": 65 },
+    { "top": 30, "left": 67 },
+    { "top": 27, "left": 66 }
+  ],
+  "image": ["/images/trash/core-hound-packs.png"],
+  "mainMechanic": "All must die at the same time.",
+  "strategy": "Time for big AoE. Melees should spread their damage and focus the one with the most HP."
+}
+,
        {
-      "id": "core-hound-packs",
-      "name": "Core Hound packs",
-       "mapPos": [{ "top": 40, "left": 65 },
-                 { "top": 30, "left": 67 },
-                 { "top": 27, "left": 66 }
-    ],
-      "image": ["/images/trash/core-hound-packs.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "flame-imps",
+  "name": "Flame Imps",
+  "mapPos": [
+    { "top": 30, "left": 57.5 },
+    { "top": 33, "left": 61 }
+  ],
+  "image": ["/images/trash/flame-imps.png"],
+  "mainMechanic": "Let the tank build threat, casters unleash AoE, melees be ready to pick up any imp lost by the tank.",
+  "strategy": "They deal fire damage. Ideally, let the tank build enough threat so no imp escapes, otherwise it will burn your GFPP. If you AoE too early, it could lead to a wipe, so hold a bit before starting."
+}
+,
        {
-      "id": "flame-imps",
-      "name": "Flame imps",
-       "mapPos": [{ "top": 30, "left": 57.5 },
-                 { "top": 33, "left": 61 }
-    ],
-      "image": ["/images/trash/flame-imps.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "lava-surger",
+  "name": "Lava Surger",
+  "mapPos": [
+    { "top": 14, "left": 38 },
+    { "top": 45, "left": 75 }
+  ],
+  "image": ["/images/trash/lava-surger.png"],
+  "mainMechanic": "Charges the furthest player, knocking back all enemies in its path.",
+  "strategy": "Assign a hunter to soak the charge, or have everyone stack at the same point. Can also be banished."
+}
+,
        {
-      "id": "lava-surger",
-      "name": "Lava Surger",
-       "mapPos": [{ "top": 14, "left": 38 },
-                 { "top": 45, "left": 75 }
-    ],
-      "image": ["/images/trash/lava-surger.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
-       {
-      "id": "lava-annihilator",
-      "name": "Lava Annihilator",
-       "mapPos": [{ "top": 17, "left": 35 },
-                 { "top": 45, "left": 75 },
-                 { "top": 9, "left": 38 },
-                 { "top": 8, "left": 40 }
-    ],
-      "image": ["/images/trash/lava-annihilator.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "lava-annihilator",
+  "name": "Lava Annihilator",
+  "mapPos": [
+    { "top": 17, "left": 35 },
+    { "top": 45, "left": 75 },
+    { "top": 9, "left": 38 },
+    { "top": 8, "left": 40 }
+  ],
+  "image": ["/images/trash/lava-annihilator.png"],
+  "mainMechanic": "Requires a taunt rotation; melees without plate armor should stay out.",
+  "strategy": [
+    "Can easily nuke characters without plate armor, so rogues, feral druids, and shamans should stay out of this fight. Tanks and warrior DPS will use a taunt rotation; warriors should equip a shield.",
+    "Shares spawn with Firelord."
+  ]
+}
+,    
     {
-      "id": "lava-reaver",
-      "name": "Lava Reaver",
-      "mapPos": [{ "top": 35, "left": 65 },
-                 { "top": 45, "left": 75 }
-    ],
-      "image": ["/images/trash/lava-reaver.png"],
-      "position": ["/images/position/lava-elemental.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Stay spread to avoid AoE damage."
-    },
-    {
-      "id": "flameguard",
-      "name": "Flameguard",
-      "mapPos": [{ "top": 35, "left": 65 },
-                 { "top": 45, "left": 75 }
-    ],
-      "image": ["/images/trash/flameguard.png"],
-      "position": ["/images/position/lava-elemental.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Stay spread to avoid AoE damage."
-    },
-    {
-      "id": "firewalker",
-      "name": "Firewalker",
-      "mapPos": [{ "top": 35, "left": 65 },
-                 { "top": 45, "left": 75 }
-    ],
-      "image": ["/images/trash/firewalker.png"],
-      "position": ["/images/position/lava-elemental.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Stay spread to avoid AoE damage."
-    }
+  "id": "lava-packs",
+  "name": "Lava Packs",
+  "mapPos": [
+    { "top": 35, "left": 65 },
+    { "top": 45, "left": 75 }
+  ],
+  "image": ["/images/trash/firewalker.png"],
+  "mainMechanic": "Deadliest pack with Mind Control; focus Firewalker first, banish Lava Elemental or Lava Reaver.",
+  "strategy": [
+    "This pack is even deadlier than some bosses. Good coordination is required.",
+    "Firewalker casts a 3000 fireball on a random target, can cast quickly and twice. If you have less than 6000 HP, consider it Russian roulette.",
+    "Flameguard has a fire aura; melees should stay out to avoid burning GFPP. Let casters handle it.",
+    "Lava Elemental casts 1500 fire damage over 6 sec and stuns if facing the raid. It can also hit its main target hard, so watch threat.",
+    "Lava Reaver hits hard non-melee tanks and cleaves.",
+    "On pull, casters should pre-cast on Firewalker to take it down fast. Warlocks will banish Lava Elemental and Lava Reaver. Once Firewalker is dead, handle mobs one by one. Prepot a GFPP and use another if you take fire damage."
+  ]
+}
+
     
 
   ]

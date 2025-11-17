@@ -201,10 +201,9 @@
   "id": "shazzrah",
   "name": "Shazzrah",
   "mapPos": { "top": 86, "left": 55 },
-  "image": [
-    "/images/position/shazzrah1.png",
-    "/images/position/shazzrah2.png"
-  ],
+  "image": ["/images/bosses/shazzrah.png"],
+  "position": [ "/images/position/shazzrah1.png", 
+  "/images/position/shazzrah2.png" ],
   "mainMechanic": "Arcane Explosion and teleport.",
   "spells": [
     {

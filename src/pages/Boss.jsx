@@ -5,6 +5,9 @@ import PositionDiagram from "../components/PositionDiagram";
 import BossCard from "../components/BossCard";
 import Consumables from "../components/Consumables";
 import consumablesDataArray from "../data/consumables.json";
+import Items from "../components/Items";
+import itemsDataArray from "../data/items.json";
+
 
 export default function Boss() {
   const { raidId, type, bossId } = useParams();
@@ -16,6 +19,11 @@ export default function Boss() {
   consumablesDataArray.forEach((c) => {
     consumablesData[c.id] = c;
   });
+  const itemsData = {};
+itemsDataArray.forEach(i => {
+  itemsData[i.id] = i;
+});
+
 
   useEffect(() => {
     let isMounted = true;
@@ -62,18 +70,38 @@ export default function Boss() {
       classes: item.classes || global.classes || [],
     };
   });
+  const mergedItems = (boss.items || []).map(item => {
+  const global = itemsData[item.id] || {};
+
+  return {
+    id: item.id,
+    name: global.name || item.name || "Unnamed item",
+    icon: global.icon || item.icon || "/images/items/default.png",
+    unique: global.unique ?? item.unique ?? true,
+    quantity: item.quantity || 1
+  };
+});
+
 
   return (
     <div className="p-6 text-gray-200 overflow-x-hidden">
   
       <h1 className="text-3xl font-heading text-gold mb-2">{boss.name}</h1>
     
-      {mergedConsumables.length > 0 && (
-        <>
-          <h2 className="text-2xl font-heading text-gold mt-4 mb-2">Consumables</h2>
-          <Consumables items={mergedConsumables} />
-        </>
-      )}
+     {mergedConsumables.length > 0 && (
+  <>
+    <h2 className="text-2xl font-heading text-gold mt-4 mb-2">Consumables</h2>
+    <Consumables items={mergedConsumables} />
+  </>
+)}
+
+{mergedItems.length > 0 && (
+  <>
+    <h2 className="text-2xl font-heading text-gold mt-4 mb-2">Required Items</h2>
+    <Items items={mergedItems} />
+  </>
+)}
+
 
       {boss.spells?.length > 0 && (
         <>
@@ -147,7 +175,7 @@ export default function Boss() {
       {boss.position?.length > 0 && (
         <>
           <h2 className="text-2xl font-heading text-gold mt-6 mb-2">Positioning</h2>
-          <PositionDiagram />
+          <PositionDiagram boss={boss} />
         </>
       )}
       

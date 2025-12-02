@@ -4,18 +4,27 @@ import BossCard from '../components/BossCard';
 import RaidMap from '../components/RaidMap';
 import Consumables from '../components/Consumables';
 import LinkifyText from "../components/LinkifyText";
+import consumablesDataArray from '../data/consumables.json';
+import Items from "../components/Items";
+import itemsDataArray from "../data/items.json";
 
-import consumablesDataArray from '../data/consumables.json'; 
+
 export default function Raid() {
   const { raidId } = useParams();
   const [raid, setRaid] = useState(null);
   const [loading, setLoading] = useState(true);
 
 
+  
   const consumablesData = {};
   consumablesDataArray.forEach(c => {
     consumablesData[c.id] = c;
   });
+  const itemsData = {};
+itemsDataArray.forEach(i => {
+  itemsData[i.id] = i;
+});
+
 
   useEffect(() => {
     let isMounted = true;
@@ -73,13 +82,47 @@ export default function Raid() {
       }
     });
   };
+const itemsMap = {};
+
+const addItems = (items = []) => {
+  items.forEach(item => {
+    const global = itemsData[item.id] || {};
+    const key = item.id;
+
+    const entry = {
+      id: key,
+      name: global.name || item.name || "Unnamed item",
+      icon: global.icon || item.icon || "/images/items/default.png",
+      unique: global.unique ?? item.unique ?? true,
+    };
+
+    
+    if (entry.unique) {
+      if (!itemsMap[key]) itemsMap[key] = { ...entry, quantity: 1 };
+      return;
+    }
+
+    
+    if (!itemsMap[key]) {
+      itemsMap[key] = { ...entry, quantity: item.quantity || 0 };
+    } else {
+      itemsMap[key].quantity += item.quantity || 0;
+    }
+  });
+};
 
  
   addConsumables(raid.consumables);
+  addItems(raid.items);
+
 
  
   const allBosses = [...(raid.bosses || []), ...(raid.trash || [])];
-  allBosses.forEach(boss => addConsumables(boss.consumables));
+  allBosses.forEach(boss => {
+  addConsumables(boss.consumables);
+  addItems(boss.items);
+});
+
 
   const totalConsumables = Object.values(consumablesMap);
 
@@ -101,6 +144,13 @@ export default function Raid() {
           <Consumables items={totalConsumables} />
         </div>
       )}
+      {Object.values(itemsMap).length > 0 && (
+  <div className="mt-8">
+    <h2 className="text-xl font-bold mb-3">Raid items</h2>
+    <Items items={Object.values(itemsMap)} />
+  </div>
+)}
+
 
       <h2 className="text-2xl font-heading text-gold mt-10 mb-4">Interactive Map</h2>
       <RaidMap raidId={raid.id} raid={raid} />

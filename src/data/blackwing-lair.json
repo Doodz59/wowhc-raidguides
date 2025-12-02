@@ -1,9 +1,9 @@
 {
-  "id": "molten-core",
-  "name": "Molten Core",
-  "description": "A raid deep within Blackrock Mountain, home of Ragnaros the Firelord.",
-   "consumables": [
-    {
+  "id": "blackwing-lair",
+  "name": "Blackwing Lair",
+  "description": "Nefarion's home",
+  "consumables": [ 
+  {
       "id": "flask_titan",
       "quantity": 1,
       "classes": ["tank", "melee"]
@@ -24,284 +24,705 @@
       "classes": ["melee", "tank", "caster", "healer"]
     }
   ],
+  "items":[
+    {
+      "id":"onyxia-scale-cloack",
+      "classes":["tank","caster","healer","melee"]
+    }
+  ],
   "bosses": [
     {
-      "id": "lucifron",
-      "name": "Lucifron",
-      "mapPos": { "top": 35, "left": 65 },
-      "image": ["/images/bosses/lucifron.png"],
-      "position": ["/images/position/lucifron.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Impending Doom", "desc": "A curse that deals periodic shadow damage." },
-        { "id": 2, "name": "Lucifron's Curse", "desc": "Increases the cost of abilities and spells by 100% for 5 minutes." }
-      ],
-      "consumables": [
-        {
-          "id": "restorative_potion",
-          "quantity": 1,
-          "classes": ["tank", "caster","healer","melee"]  
-        }
-        
-      ],
-      "strategy": "Assign decursers quickly to remove Lucifron’s Curse. Spread out to reduce shadow damage and focus down the two Flamewaker Protectors first."
+  "id": "razorgore-the-untamed",
+  "name": "Razorgore The Untamed",
+  "mapPos": { "top": 88, "left": 32 },
+  "image": ["/images/bosses/razorgore-the-untamed.png"],
+  "position": ["/images/position/razorgore-the-untamed1.png","/images/position/razorgore-the-untamed2.png"],
+  "mainMechanic": "kill all eggs, let tank build threat, melee pop FAP when going in.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "conflagrate",
+      "desc": "Inflicts 3000 fire damage over 10seconds, send target into panic."
     },
     {
-      "id": "magmadar",
-      "name": "Magmadar",
-      "mapPos": { "top": 20, "left": 68 },
-      "image": ["/images/bosses/magmadar.png"],
-      "position": ["/images/position/magmadar.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Panic", "desc": "Fears nearby enemies for 8 seconds." },
-        { "id": 2, "name": "Lava Bomb", "desc": "Creates a fire patch dealing fire damage over time." }
-      ],
-      "consumables": [
-        {
-          "id": "fire_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]  
-        }
-        
-      ],
-      "strategy": "Use Fear Ward or Tremor Totems to handle Panic. Keep the raid spread and move out of Lava Bomb patches. Hunters should maintain Tranquilizing Shot on cooldown."
+      "id": 2,
+      "name": "War stomp",
+      "desc": "Inflicts normal damage plus 500 to nearby enemies, knocking them back and stunning them for 5 sec."
     },
     {
-      "id": "gehennas",
-      "name": "Gehennas",
-      "mapPos": { "top": 47, "left": 32 },
-      "image": ["/images/bosses/gehennas.png"],
-      "position": ["/images/position/gehennas.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Gehennas' Curse", "desc": "Reduces healing received by 75%." },
-        { "id": 2, "name": "Rain of Fire", "desc": "Deals fire damage in an area." }
-      ],
-      "consumables": [
-        {
-          "id": "free_action_potion",
-          "quantity": 1,
-          "classes": ["tank", "melee"]  
-        },
-        {
-          "id":"shadow_protection",
-          "quantity":2,
-          "classes":["caster","healer","melee","tank"]
-        },
-        {
-          "id":"fire_protection",
-          "quantity":1,
-          "classes":["caster","healer","melee","tank"]
-        }
-        
-      ],
-      "strategy": "Tank Gehennas away from his adds. Kill the adds first, then the boss. Avoid Rain of Fire zones and dispel the healing reduction curse immediately."
+      "id":3,
+      "name":"Fireball volley",
+      "desc":"Send fireball to all ennemies in front of him (180°)"
     },
     {
-      "id": "garr",
-      "name": "Garr",
-      "mapPos": { "top": 69, "left": 30 },
-      "image": ["/images/bosses/garr.png"],
-      "position": ["/images/position/garr.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Antimagic Pulse", "desc": "Dispels magic effects from nearby enemies." }
-      ],
-      "strategy": "Each add must be off-tanked and killed one by one. Assign warlocks to banish specific adds. Focus on control and avoid breaking banishes early."
-    },
-    {
-      "id": "baron-geddon",
-      "name": "Baron Geddon",
-      "mapPos": { "top": 78, "left": 51 },
-      "image": ["/images/bosses/baron-geddon.png"],
-      "position": ["/images/position/baron-geddon.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Living Bomb", "desc": "Afflicts a random player who will explode after 8 seconds." },
-        { "id": 2, "name": "Ignite Mana", "desc": "Burns mana and deals fire damage over time." }
-      ],
-      "consumables": [
-        {
-          "id": "fire_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]  
-        }
-],
-      "strategy": "Players with Living Bomb must move away from the raid. Use fire protection potions and avoid standing near mana users if Ignite Mana is active."
-    },
-    {
-      "id": "shazzrah",
-      "name": "Shazzrah",
-      "mapPos": { "top": 85, "left": 54 },
-      "image": ["/images/bosses/shazzrah.png"],
-      "position": [
-        "/images/position/shazzrah1.png",
-        "/images/position/shazzrah2.png"
-      ],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Arcane Explosion", "desc": "Deals arcane damage to all nearby enemies." },
-        { "id": 2, "name": "Gate of Shazzrah", "desc": "Teleports to a random target and follows with Arcane Explosion." }
-      ],
-      "consumables": [
-         {
-          "id": "arcane_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]
-        }
-],
-      "strategy": "Casters should stay spread. Melee must move out quickly after each teleport. Interrupt Arcane Explosion whenever possible."
-    },
-    {
-      "id": "golemagg",
-      "name": "Golemagg the Incinerator",
-      "mapPos": { "top": 57, "left": 68 },
-      "image": ["/images/bosses/golemagg.png"],
-      "position": ["/images/position/golemagg.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Magma Splash", "desc": "Applies a stacking fire damage debuff to melee attackers." }
-      ],
-      "consumables": [
-        {
-          "id": "fire_protection",
-          "quantity": 1,
-          "classes": ["tank","melee"]  
-        }, {
-          "id": "free_action_potion",
-          "quantity": 1,
-          "classes": ["tank","melee"]
-        }
-],
-      "strategy": "Tank him in place and swap tanks to manage debuff stacks. Kill the Core Ragers last after Golemagg dies."
-    },
-    {
-      "id": "sulfuron",
-      "name": "Sulfuron Harbinger",
-      "mapPos": { "top": 83, "left": 82 },
-      "image": ["/images/bosses/sulfuron.png"],
-      "position": ["/images/position/sulfuron.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Inspire", "desc": "Buffs nearby allies, increasing their damage." }
-      ],
-      "strategy": "Each Flamewaker Priest should be tanked separately. Focus on killing healers first, then Sulfuron. Interrupt heals whenever possible."
-    },
-    {
-      "id": "majordomo",
-      "name": "Majordomo Executus",
-      "mapPos": { "top": 65, "left": 83 },
-      "image": ["/images/bosses/majordomo.png"],
-      "position": ["/images/position/majordomo.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Magic Reflection", "desc": "Reflects spells for a short duration." }
-      ],
-      "consumables": [
-         {
-          "id": "shadow_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster","healer","melee"]
-        }
-],
-      "strategy": "Manage adds carefully — kill healers first, then elites. Do not kill Executus himself; he yields after his guards are defeated."
-    },
-    {
-      "id": "ragnaros",
-      "name": "Ragnaros",
-      "mapPos": { "top": 53, "left": 55 },
-      "image": ["/images/bosses/ragnaros.png"],
-      "position": ["/images/position/ragnaros.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "spells": [
-        { "id": 1, "name": "Wrath of Ragnaros", "desc": "Knocks back nearby enemies and deals fire damage." },
-        { "id": 2, "name": "Sons of Flame", "desc": "Summons fire elementals during submerge phase." }
-      ],
-      "consumables": [
-        {
-          "id": "fire_protection",
-          "quantity": 2,
-          "classes": ["tank", "caster"]  
-        }
-        
-      ],
-      "strategy": "Stay max range to avoid knockbacks. Manage submerge phases by controlling and killing Sons of Flame quickly. Use fire resist gear."
+      "id":4,
+      "name":"Cleave",
+      "desc":"180° cleave hitting up to 10 nearby targets"
     }
+  ],
+  "adds": [
+    {
+      "name": "Blackwing Mage",
+      "spells": [
+        {
+          "id": 1,
+          "name": "Fireball",
+          "desc": "Fireball dealing 600 to 900 damages."
+        },
+        {
+          "id": 2,
+          "name": "Arcane Explosion",
+          "desc": "arcane explosion dealing 450 to 700 damages."
+        }
+      ]
+    },
+    {
+      "name":"Blackwing Legionnaire",
+      "spells":[
+        {
+          "id":1,
+          "name":"strike",
+          "desc":"Dealing 1000 damage to his current target"
+        }
+      ]
+    },
+    {
+      "name":"Death Talon Dragonspawn",
+      "spells":[
+        {
+          "id":1,
+          "name":"Strike",
+          "desc":"Strike dealing 1500 to 2000 damage to his current target"
+        },
+        {
+          "id":2,
+          "name":"Cleave",
+          "desc":"cleave up to 3 nearby ennemies, dealing 1800 to 2000 damage."
+        }
+      ]
+    },
+    {
+      "name":"Grethok the Controller",
+      "spells":[
+        {
+          "id":1,
+          "name":"Dominate Mind",
+          "desc":"Takes control of a humanoid enemy for 15seconds"
+        },
+        {
+          "id":2,
+          "name":"Arcane Missiles",
+          "desc":"Deal 400 to 800 arcane damage to his target"
+        },
+        {
+          "id":3,
+          "name":"Slow",
+          "desc":"Increases the time between nearby enemies' attacks by 54% and slows their movement by 60% for 10 sec."
+        },
+        {
+          "id":4,
+          "name":"Greater Polymorph",
+          "desc":"Transforms an enemy into a sheep, forcing it to wander around for up to 20 sec"
+        }
+      ]
+    },
+    {
+      "name":"Blackwing Guardsman",
+      "spells":[
+        {
+          "id":1,
+          "name":"Strike",
+          "desc":"instant attack that deal 1900 damage"
+        }
+      ]
+    }
+  ],
+  "roles": [
+     ],
+  "consumables": [
+    {
+      "id": "free_action_potion",
+      "quantity": 1,
+      "classes": ["tank","melee"]
+    }
+  ],
+  "strategy": ["this fight is a two phase fight: First one player will take click on orb, allowing him to control Razorgore, his duty will be to destroy ALL EGGS in the room. DO NOT TOUCH RAZORGORE UNTIL ALL EGGS ARE DEAD. ",
+   "While doing this the rest of the raid will kill Grethok the Controller escorted by two Blackwing Guardsman. Grethok can MC so no cleave, no aoe. ", 
+   "Once Grethok dead, caster and range stay on the middle of the platform. Melees and tank will be split into two groups. Adds will spawn until all eggs are dead. Kill prio : Blackwing Mage>Death Talon Dragonspawn>Blackwing Legionnaire ",
+   "Phase 2 of the fight is Razorgore himself, wait a bit for tank build a bit of threat, tank will face Razorgore away to avoid fireball volley. Melees and tank will pop a FAP when going to cancel war stomp effect"
+  ]
+},
+
+   {
+  "id": "vaelastrasz-the-corrupt",
+  "name": "Vaelastrasz The Corrupt",
+  "mapPos": { "top": 74, "left": 49 },
+  "image": ["/images/bosses/vaelastrasz-the-corrupt.png"],
+  "position": ["/images/position/vaelastrasz-the-corrupt.png"],
+  "mainMechanic": "DPS check, watch your debuff if you're mana user.",
+  "spells": [
+    { "id": 1, "name": "Burning Adrenaline", "desc": "Damage done increased by 100%. Spells cast are all instant. Reduces max health by 5% every second. Deals 4376 to 5624 damage to surrounding allies on death.." },
+    { "id": 2, "name": "Essence of the Red", "desc": "Restores 500 Mana per second.Restores 50 Energy per second.Generates 20 Rage per second" },
+    { "id": 3, "name": "Cleave", "desc":"180° cleave hitting up to 10 nearby targets" },
+    { "id": 4, "name": "Flame Breath", "desc": "Inflicts 3500 to 4500 Fire damage to enemies in a cone in front" },
+    { "id": 5, "name": "Fire Nova", "desc": "Inflicts 500 to 600 Fire damage to nearby ennemies" },
+    {"id":6,"name":"Tail Sweep","desc":"Inflicts 600 to 1000 damage on enemies in a cone behind the caster, knocking them back."}
+  ],
+  "roles": [
+    {
+      "classes": ["Priest"],
+      "desc": "Pre-shield as many people you can until we told you to stop."
+    }
+  ],
+  "consumables": [
+    {
+      "id": "fire_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "strategy": ["Pre-pot a Greater Fire Protection Potion (GFPP). Use another one when consumed. Melees should let tank build threat before going in. Carefull about your position, if too in front you will be cleave and flame breath, if too behind you will be tail Sweep",
+"When fight start Vaelastrasz will apply on all of us Essence of the Red allowing to have huge mana/rage/energy generation. She will also apply Burning Adrenaline on mana user and tank ( mana,mana,mana,mana,tank,mana,mana,mana,mana,tank,etc..) Watch your debuff, if you have it, go away of raid group, and use your hearthstone ( it will be instant) KEEP HEARTHSTONE CD for this fight",
+" It's a dps race, once tank have made some threat, unleash your dps and watch your threat"]
+
+},
+
+    {
+  "id": "broodlord-lashlayer",
+  "name": "Broodlord Lashlayer",
+  "mapPos": { "top": 50, "left": 20 },
+  "image": ["/images/bosses/broodlord-lashlayer.png"],
+  "position": ["/images/position/broodlord-lashlayer.png"],
+  "mainMechanic": "Big melee dmg, watch your threat, two rogues on trap duty.",
+  "spells": [
+    { "id": 1, "name": "auto attack", "desc": "deal between 2800 and 3500 damage to his current target." },
+    { "id": 2, "name": "Mortal Strike", "desc": "deal 500% of his auto attack damage ( 15000 to 18000 damage)." },
+    { "id": 3, "name":"Knock away", "desc":"Auto attack damage, and reduce threat from his target by 50%"},
+    { "id": 4, "name":"Cleave", "desc":"Auto attack damage on his target +2  prefer targets in front, and then if not enough targets in front, those closest to him"},
+    { "id": 5, "name":"Blast Wave", "desc":" Unleashes a wave of flame, inflicting Fire damage to nearby enemies, knocking them back and reducing their movement speed for 8 sec."}
+  ],
+  
+  "roles": [
+    {
+      "classes": ["Rogue"],
+      "desc": "Two rogues will be assign to disarm trap ( one close to melee, one close to tank). Tank one try to be max range of trap to avoid Blast wave"
+    },
+    {
+      "classes":["Paladin"],
+      "desc":"Use Lay of Hands on one of the three tanks before the fight starting( will be assignated in raid)"
+    }    
+  ],
+  "strategy": "WATCH YOUR THREAT OR YOU ARE DEAD. Broodlord hit really hard and have a drop threat mechanic, you must be under the three tanks all the time "
+},
+
+    {
+  "id": "firemaw",
+  "name": "Firemaw",
+  "mapPos": { "top": 30, "left": 48 },
+  "image": ["/images/bosses/firemaw.png"],
+  "position": ["/images/position/firemaw.png"],
+  "mainMechanic": "EQUIP ONYXIA SCALE CLOAK. Apply a stacking debuff that deal fire damage, LOS him to drop debuff.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Flame Buffet",
+      "desc": "Inflicts 139 to 161 Fire damage to an enemy and increases the Fire damage it takes by 150 for 10 sec. it stack"
+    },
+    {
+      "id": 2,
+      "name": "Shadow Flame",
+      "desc": ["Inflicts 3938 to 5062 Shadow damage to enemies in a cone in front.",
+       " If you don't have onyxia scale cloak : Damage over Time - 1750 - 2250 Shadow Damage every second for 10 seconds.",
+        " Damage cannot be partially resisted.Final Damage at DoT Expiration - 20000 Shadow Damage. Pierces immunities, cannot be resisted."]
+    },
+    {
+      "id": 3,
+      "name": "Wing Buffet",
+      "desc": "Inflicts 563 to 937 damage to enemies in a cone in front of the caster, knocking them back."
+    },
+    {
+      "id":4,
+      "name":"Thrash",
+      "desc":"50% chance to triple attack with each attack (6000 damage)"
+    }
+  ],
+  "items":[
+    {
+      "id":"onyxia-scale-cloack",
+      "classes":["tank","caster","healer","melee"]
+    }
+  ],
+      "strategy": "YOU MUST EQUIP ONYXIA SCALE CLOAK OR YOU DEAD to avoid Shadow Flame damage. Watch your debuff, go hide once you have 5/6 stacks of debuff. Don't greed you will stress healer."
+}
+,
+    {
+  "id": "ebonroc",
+  "name": "Ebonroc",
+  "mapPos": { "top": 19, "left": 69 },
+  "image": ["/images/bosses/ebonroc.png"],
+  "position":  ["/images/position/ebonroc.png"], 
+  
+  "mainMechanic": "EQUIP ONYXIA SCALE CLOAK.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Shadow Flame",
+      "desc":  ["Inflicts 3938 to 5062 Shadow damage to enemies in a cone in front.",
+       " If you don't have onyxia scale cloak : Damage over Time - 1750 - 2250 Shadow Damage every second for 10 seconds.",
+        " Damage cannot be partially resisted.Final Damage at DoT Expiration - 20000 Shadow Damage. Pierces immunities, cannot be resisted."]
+    },
+    {
+      "id": 2,
+      "name": "Shadow of Ebonroc",
+      "desc": "When melee damaged, heals Ebonroc for 25000"
+    },
+    {
+      "id": 3,
+      "name": "Wing Buffet",
+      "desc": "Inflicts 563 to 937 damage to enemies in a cone in front of the caster, knocking them back."
+    },
+    {
+      "id": 4,
+      "name": "Thrash",
+      "desc": "50% chance to triple attack with each attack (6000 damage)"
+    }    
+  ],
+  "roles": [   
+  ],
+  "consumables": [
+     ],
+     "items":[
+    {
+      "id":"onyxia-scale-cloack",
+      "classes":["tank","caster","healer","melee"]
+    }
+  ],
+  "strategy": "YOU MUST EQUIP ONYXIA SCALE CLOAK OR YOU DEAD to avoid Shadow Flame damage. It's mostly a tank fight, watch your threat really carefully"
+}
+,
+    {
+  "id": "flamegor",
+  "name": "Flamegor",
+  "mapPos": { "top": 28, "left": 88 },
+  "image": ["/images/bosses/flamegor.png"],
+  "position": ["/images/position/flamegor.png"],
+  "mainMechanic": "EQUIP ONYXIA SCALE CLOAK.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Shadow Flame",
+      "desc":  ["Inflicts 3938 to 5062 Shadow damage to enemies in a cone in front.",
+       " If you don't have onyxia scale cloak : Damage over Time - 1750 - 2250 Shadow Damage every second for 10 seconds.",
+        " Damage cannot be partially resisted.Final Damage at DoT Expiration - 20000 Shadow Damage. Pierces immunities, cannot be resisted."]
+    },
+    {
+      "id": 2,
+      "name": "Thrash",
+      "desc": "50% chance to triple attack with each attack (6000 damage)"
+    },
+    {
+      "id": 3,
+      "name": "Wing Buffet",
+      "desc": "Inflicts 563 to 937 damage to enemies in a cone in front of the caster, knocking them back."
+    },
+    {
+      "id": 4,
+      "name": "Frenzy",
+      "desc": "Attack speed increased by 150%"
+    },
+    {
+      "id":5,
+      "name":"Fire Nova",
+      "desc":"Cast every 2 seconds while in Frenzy, deal 500-650 fire damage"
+    }
+  ],
+  "adds": [
+    ],
+     "roles": [  {
+      "classes": ["hunter"],
+      "desc": "You will have to do a tranquilizing shot rotation"
+    }
+  ],
+  "consumables": [
+    
+  ],
+  "items":[
+    {
+      "id":"onyxia-scale-cloack",
+      "classes":["tank","caster","healer","melee"]
+    }
+  ],
+  "strategy": "Hunter will use tranquilizing shot when he cast frenzy, to reduce auto attack dammage and cancel Fire Nova proc. Mostly a tank fight, watch your threat"
+}
+  ,
+    {
+  "id": "chromaggus",
+  "name": "Chromaggus",
+  "mapPos": { "top": 38, "left": 82 },
+  "image": ["/images/bosses/chromaggus.png"],
+  "position": ["/images/position/chromaggus.png"],
+  "mainMechanic": "Watch threat, watch debuff, hide before breath",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Frenzy",
+      "desc": "Attack speed and Spell damage increased by 150%"
+    },
+    {
+      "id": 2,
+      "name": "Breath: Incinerate",
+      "desc": "Inflicts 3900-4600 fire damage at 360 angle"
+    },
+    {
+      "id": 3,
+      "name": "Breath: Corrosive Acid",
+      "desc": "875-1125/tick every 3 seconds nature damage at 360 angle."
+    },
+     {
+      "id": 4,
+      "name": "Breath: Frost Burn",
+      "desc": "1750-2100 frost damage at 360 angle."
+    },
+     {
+      "id": 5,
+      "name": "Breath: Ignite Flesh",
+      "desc": "657-843/tick every 3 seconds fire damage at 360 angle."
+    },
+     {
+      "id": 6,
+      "name": "Breath: Time Lapse",
+      "desc": "Chromaggus temporarily drops threat on all players affected by Time Lapse. Once the stun duration is over, threat is restored."
+    },
+     {
+      "id": 7,
+      "name": "Brood Affliction: Black",
+      "desc": "Increases fire damage taken by 100% (Curse)"
+    },
+    {
+      "id": 8,
+      "name": "Brood Affliction: Blue",
+      "desc": "Burns 50 mana every 1 sec.Casting speed reduced by 50%. Movement speed reduced by 30% (Magic)"
+    },
+    {
+      "id": 9,
+      "name": "Brood Affliction: Bronze ",
+      "desc": "Periodically stuns for 4 sec.(dispelled with Hourglass Sand)"
+    },
+     {
+      "id": 10,
+      "name": "Brood Affliction: Green",
+      "desc": "Deals 250 nature damage every 5 sec.Healing effects reduced by 50%. (Poison)"
+    },
+     {
+      "id": 11,
+      "name": "Brood Affliction: Red",
+      "desc": "Deals 50 fire damage every 3 sec.On Death, Heals Chromaggus.(Disease)"
+    },
+     {
+      "id": 12,
+      "name": "Chromatic Mutation",
+      "desc": "This debuff is applied by Chromaggus to any player who receives all five Brood Afflictions. It turns you into an elite Drakonoid, raises all of your resistances, and charms you. can be removed with Flask of Petrification"
+    },
+    {
+      "id":13,
+      "name":"Shimmering",
+      "desc":"Chromaggus will be more vulnerable to one type of magic "
+    }
+  ],
+  "adds": [
+    
+  ],
+  "roles": [
+    {
+      "classes": ["hunter"],
+      "desc": "You will have to do a tranquilizing shot rotation"
+    },
+    {
+      "classes":["Paladin","mage","Priest","druid"],
+      "desc":"You will be on dispell duty"
+    }
+  ],
+  "strategy": ["this is a long fight, hide before he cast breath, if you are affected by Brood Affliction: Bronze, moove even earlier. Chill on dps at start, watch your threat, a bad position for Chromaggus can be really dangerous.",
+" Chromaggus will only use two type of breath per week. He will always alternate between one of the two.",
+" 1 out of 5 afflictions chosen at random, affecting 8-13 random players, even out of line of sight. Can be resisted "]
+}
+,
+    {
+  "id": "nefarian",
+  "name": "Nefarian",
+  "mapPos": { "top": 68, "left": 63 },
+  "image": ["/images/bosses/nefarian.png"],
+  "position": ["/images/position/nefarian1.png","/images/position/nefarian2.png"],
+  "mainMechanic": "EQUIP ONYXIA SCALE CLOAK",
+  "spells": [   
+    {
+      "id": 1,
+      "name": "Shadow Command ( phase 1)",
+      "desc": "Mind control a random player for 15sec."
+    },
+    {
+      "id": 2,
+      "name": "Shadow bolt / Shadow bolt volley (phase 1)",
+      "desc": "950-1350 shadow damage, Volley target erveryone within 40yards 360 angle."
+    },
+    {
+      "id": 3,
+      "name": "Fear(phase 1 )",
+      "desc": "Fear a player in range ( 25-60 CD)."
+    },
+    {
+      "id": 4,
+      "name": "Silence (phase 1 )",
+      "desc": "Silence a player in range ( 25-60 CD)."
+    },
+    {
+      "id": 5,
+      "name": "Shadow Flame (phase 2)",
+      "desc": ["Inflicts 3938 to 5062 Shadow damage to enemies in a cone in front.",
+       " If you don't have onyxia scale cloak : Damage over Time - 1750 - 2250 Shadow Damage every second for 10 seconds.",
+        " Damage cannot be partially resisted.Final Damage at DoT Expiration - 20000 Shadow Damage. Pierces immunities, cannot be resisted."]
+    },
+    {
+      "id": 6,
+      "name":"Class call (phase 2)",
+      "desc": "Target a random class and forced them to do special things ( cf : class call abilities) "
+    },
+    {
+      "id":7,
+      "name":"Bellowing Roar(phase 2)",
+      "desc":"Fear everyone in range ( 35yards)"
+    },
+    {
+      "id":8,
+      "name":"Tail Lash (phase 2)",
+      "desc":"Disarm tank, deal 700-900 damage"
+    },
+    {
+      "id":9,
+      "name":"Veil of Shadow",
+      "desc":"Reduces healing effects 75% for 6 sec. Target tank (curse)"
+    },
+    {
+      "id":10,
+      "name":"Cleave",
+      "desc":"Inflicts normal damage affecting up to 10 targets in a frontal cone."
+    },
+    {
+      "id":11,
+      "name":"Bone Construct",
+      "desc":"at 20% HP,Nefarian will revive all adds dead from phase 1"
+    }
+  ],
+  "adds": [
+    {
+      "name": "Class Call",
+      "spells": [
+        { "id": 1, "name": "Rogue", "desc": "Teleported and immobilized in front of Nefarian. Can vanish once teleported" },
+        { "id": 2, "name": "Druid", "desc": "Forced into cat form." },
+        { "id": 3, "name": "Hunter", "desc": "Equipped range weapon instantly broken." },
+        { "id": 4, "name": "Mage", "desc": "polymorph raid members. can be iceblocked" },
+        { "id": 5, "name":"Paladin", "desc": "Force paladin to continuously cast Blessing of Protection. can be counter by precasting Divine Shield"},
+        { "id": 6, "name":"Shaman", "desc":" summone powerful versions of the Shaman's various totems that will buff Nefarian and damage the raid. Everyone need to kill totems"},
+        { "id": 7, "name":"Warlock","desc":" forced to  Summon Infernals, summoning two Corrupted Infernals per warlock to start attacking the raid. don't be stack during the fight"},
+        { "id": 8, "name":"Warriors","desc":" forcing them into a modified  Berserker Stance (berserk stance + 30% damage taken)"},
+        {"id": 9, "name":"Priest", "desc": "Direct healing spells cause the target to take 175 to 225 damage every 1 sec. can stack 50times. Stop direct heal can use renew"}
+      ]
+    }
+    
+  ],
+  "roles": [
+    {
+      "classes": ["hunter"],
+      "desc": "You will have to drop slow trap close to phase 1 adds corpse"
+    },
+    {
+      "classes":["Warlock","mage"],
+      "desc":"Be ready to AOE adds at 20% nefarian HP"
+    },
+    {
+      "classes":["druid","mage"],
+      "desc":"Decurse tank from Veil of Shadow"
+    },
+    {"classes":["priest"],
+  "desc":"Precast fear ward on melees ( tank then dps exept warriors) "}
+  ],
+  "consumables": [
+    {
+      "id": "shadow_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "items":[
+    {
+      "id":"onyxia-scale-cloack",
+      "classes":["tank","caster","healer","melee"]
+    }
+  ],
+  "strategy": ["Phase 1 is simple but need to be done correctly. We have to kill 40 adds to unlock phase 2. Adds need to die in a small area to make life easier to mage and warlock on phase 2. During this, Nefarian will cast shadow bolt, shadow bolt volley, silence, fear, and Mind control. during phase 1 desequip 2H weapon ( warrior/hunter/shaman) to avoid one shot one of your friend.",
+"once 40 adds died, Nefarian will turn into dragon and fight us. it's a long fight, pay attention to class call. IF warlock or shaman stop focus Nefarian and kill totems/infernals. once we get close to 25% hp STOP DPS, we will wait a good class call (rogue/warriors/druid/hunter) to take him down. At 20%HP he will revive all 40adds dead from phase 1. Mage and warlock use AOE, hunter use slow trap to help them handle adds."]
+}
+
   ],
   "trash": [
     {
-      "id": "lava-elemental",
-      "name": "Lava Elemental",
-      "image": ["/images/bosses/lava-elemental.png"],
-      "position": ["/images/position/lava-elemental.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Stay spread to avoid AoE damage."
-    },
+  "id": "death-talon-captain",
+  "name": "Death Talon Captain",
+  "mapPos": [
+    { "top": 35, "left": 65 },
+    { "top": 45, "left": 75 }
+  ],
+  "image": ["/images/trash/death-talon-captain.png"],
+  "mainMechanic": "Pyroclast Barrage - Deals 1500 fire damage over 6 seconds and stuns the target.",
+  "strategy": "Tank should face them away from the raid. For these packs, it's always good to prepot a GFPP."
+}
+,
     {
-      "id": "firelord",
-      "name": "Firelord",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "death-talon-seether",
+  "name": "Death Talon Seether",
+  "mapPos": [
+    { "top": 16, "left": 37 },
+    { "top": 15, "left": 34 },
+    { "top": 45, "left": 75 },
+    { "top": 19, "left": 50 },
+    { "top": 12, "left": 42 }
+  ],
+  "image": ["/images/trash/death-talon-seether.png"],
+  "mainMechanic": "Can summon Lava Spawns. Focus on killing the adds instead of Firelord.",
+  "strategy": "Interrupt Firelord's casts and prioritize the adds first. These shares spawn points with Lava Annihilator."
+}
+,
     {
-      "id": "Molten",
-      "name": "Molten Giant/Destroyer",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "death-talon-flamescale",
+  "name": "Death Talon Flamescale",
+  "mapPos": [
+    { "top": 20, "left": 32 },
+    { "top": 13, "left": 35 },
+    { "top": 23, "left": 51 }
+  ],
+  "image": ["/images/trash/death-talon-flamescale.png"],
+  "mainMechanic": "Stomps up to 8 nearby enemies.",
+  "strategy": "Always linked with another Molten Giant or Molten Destroyer. Let the tank separate them before engaging."
+}
+,
     {
-      "id": "ancien_core_hound",
-      "name": "Ancien Core Hound",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
-       {
-      "id": "core_hound_packs",
-      "name": "Core Hound packs",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
-       {
-      "id": "flame_imps",
-      "name": "Flame imps",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
-       {
-      "id": "lava_surger",
-      "name": "Lava Surger",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
-       {
-      "id": "lava_annihilator",
-      "name": "Lava Annihilator",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    },
+  "id": "death-talon-wyrmkin",
+  "name": "Death Talon Wyrmkin",
+  "mapPos": [
+    { "top": 18, "left": 32 },
+    { "top": 12, "left": 36 },
+    { "top": 25, "left": 51 }
+  ],
+  "image": ["/images/trash/death-talon-wyrmkin.png"],
+  "mainMechanic": "Can easily nuke a non-tank, watch your threat.",
+  "strategy": "Deals around 1000 damage to nearby enemies. Hits fast and can perform an instant attack on its target."
+}
+,
     {
-      "id": "lava_packs",
-      "name": "Lava Packs",
-      "image": ["/images/bosses/firelord.png"],
-      "position": ["/images/position/firelord.png"],
-      "mainMechanic": "Fait exploser un joueur aléatoire (Living Bomb), éloignez-vous du raid.",
-      "strategy": "Interrupt Firelord's casts and prioritize adds first."
-    }
+  "id": "death-talon-hatcher",
+  "name": "Death Talon Hatcher",
+  "mapPos": [
+    { "top": 73, "left": 43 },
+    { "top": 28, "left": 49 },
+    { "top": 16, "left": 41 }
+  ],
+  "image": ["/images/trash/death-talon-hatcher.png"],
+  "mainMechanic": "Applies a random debuff to the raid. Be ready to dispel.",
+  "strategy": "Tank should face it away from the raid group. Mages and Paladins should be ready to dispel."
+}
+,
+      {
+  "id": "blackwing-taskmaster",
+  "name": "Blackwing Taskmaster",
+  "mapPos": [
+    { "top": 40, "left": 65 },
+    { "top": 30, "left": 67 },
+    { "top": 27, "left": 66 }
+  ],
+  "image": ["/images/trash/blackwing-taskmaster.png"],
+  "mainMechanic": "All must die at the same time.",
+  "strategy": "Time for big AoE. Melees should spread their damage and focus the one with the most HP."
+}
+,
+       {
+  "id": "corrupted-whelp",
+  "name": "Corrupted Bronze/Red/Blue/Green Whelp",
+  "mapPos": [
+    { "top": 30, "left": 57.5 },
+    { "top": 33, "left": 61 }
+  ],
+  "image": ["/images/trash/corrupted-whelp.png"],
+  "mainMechanic": "Let the tank build threat, casters unleash AoE, melees be ready to pick up any imp lost by the tank.",
+  "strategy": "They deal fire damage. Ideally, let the tank build enough threat so no imp escapes, otherwise it will burn your GFPP. If you AoE too early, it could lead to a wipe, so hold a bit before starting."
+}
+,
+       {
+  "id": "blackwing-warlock",
+  "name": "Blackwing Warlock",
+  "mapPos": [
+    { "top": 14, "left": 38 },
+    { "top": 45, "left": 75 }
+  ],
+  "image": ["/images/trash/blackwing-warlock.png"],
+  "mainMechanic": "Charges the furthest player, knocking back all enemies in its path.",
+  "strategy": "Assign a hunter to soak the charge, or have everyone stack at the same point. Can also be banished."
+}
+,
+       {
+  "id": "blackwing-spellbinder",
+  "name": "Blackwing Spellbinder",
+  "mapPos": [
+    { "top": 17, "left": 35 },
+    { "top": 45, "left": 75 },
+    { "top": 9, "left": 38 },
+    { "top": 8, "left": 40 }
+  ],
+  "image": ["/images/trash/blackwing-spellbinder.png"],
+  "mainMechanic": "Requires a taunt rotation; melees without plate armor should stay out.",
+  "strategy": [
+    "Can easily nuke characters without plate armor, so rogues, feral druids, and shamans should stay out of this fight. Tanks and warrior DPS will use a taunt rotation; warriors should equip a shield.",
+    "Shares spawn with Firelord."
+  ]
+}
+,    
+    {
+  "id": "death-talon-overseer",
+  "name": "Death Talon Overseer",
+  "mapPos": [
+    { "top": 35, "left": 65 },
+    { "top": 45, "left": 75 }
+  ],
+  "image": ["/images/trash/death-talon-overseer.png"],
+  "mainMechanic": "Deadliest pack with Mind Control; focus Firewalker first, banish Lava Elemental or Lava Reaver.",
+  "strategy": [
+    "This pack is even deadlier than some bosses. Good coordination is required.",
+    "Firewalker casts a 3000 fireball on a random target, can cast quickly and twice. If you have less than 6000 HP, consider it Russian roulette.",
+    "Flameguard has a fire aura; melees should stay out to avoid burning GFPP. Let casters handle it.",
+    "Lava Elemental casts 1500 fire damage over 6 sec and stuns if facing the raid. It can also hit its main target hard, so watch threat.",
+    "Lava Reaver hits hard non-melee tanks and cleaves.",
+    "On pull, casters should pre-cast on Firewalker to take it down fast. Warlocks will banish Lava Elemental and Lava Reaver. Once Firewalker is dead, handle mobs one by one. Prepot a GFPP and use another if you take fire damage."
+  ]
+},
+    {
+  "id": "death-talon-wyrmguard",
+  "name": "Death Talon Wyrmguard",
+  "mapPos": [
+    { "top": 35, "left": 65 },
+    { "top": 45, "left": 75 }
+  ],
+  "image": ["/images/trash/death-talon-wyrmguard.png"],
+  "mainMechanic": "Deadliest pack with Mind Control; focus Firewalker first, banish Lava Elemental or Lava Reaver.",
+  "strategy": [
+    "This pack is even deadlier than some bosses. Good coordination is required.",
+    "Firewalker casts a 3000 fireball on a random target, can cast quickly and twice. If you have less than 6000 HP, consider it Russian roulette.",
+    "Flameguard has a fire aura; melees should stay out to avoid burning GFPP. Let casters handle it.",
+    "Lava Elemental casts 1500 fire damage over 6 sec and stuns if facing the raid. It can also hit its main target hard, so watch threat.",
+    "Lava Reaver hits hard non-melee tanks and cleaves.",
+    "On pull, casters should pre-cast on Firewalker to take it down fast. Warlocks will banish Lava Elemental and Lava Reaver. Once Firewalker is dead, handle mobs one by one. Prepot a GFPP and use another if you take fire damage."
+  ]
+}
+
+    
 
   ]
 }

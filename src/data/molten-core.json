@@ -24,11 +24,13 @@
       "classes": ["melee", "tank", "caster", "healer"]
     }
   ],
+  
   "bosses": [
+     
     {
   "id": "lucifron",
   "name": "Lucifron",
-  "mapPos": { "top": 36, "left": 65 },
+  "mapPos": { "top": 36, "left": 67 },
   "image": ["/images/bosses/lucifron.png"],
   "position": ["/images/position/lucifron.png"],
   "mainMechanic": "Curses the entire raid; adds can Mind Control players.",
@@ -80,7 +82,7 @@
    {
   "id": "magmadar",
   "name": "Magmadar",
-  "mapPos": { "top": 21, "left": 69 },
+  "mapPos": { "top": 17, "left": 71 },
   "image": ["/images/bosses/magmadar.png"],
   "position": ["/images/position/magmadar.png"],
   "mainMechanic": "Covers the room with fire; avoid all fire patches, they deal heavy damage.",
@@ -110,11 +112,57 @@
   ],
   "strategy": "Pre-pot a Greater Fire Protection Potion (GFPP). Use another one if consumed. Melee should not engage until the first Panic is used. Casters and healers must spread out. Do not stand in fire patches."
 },
+{
+  "id": "gehennas",
+  "name": "Gehennas",
+  "mapPos": { "top": 49, "left": 31 },
+  "image": ["/images/bosses/gehennas.png"],
+  "position": ["/images/position/gehennas.png"],
+  "mainMechanic": "Pre-pot GSPP and avoid Rain of Fire at all costs.",
+  "spells": [
+    { "id": 1, "name": "Shadow Bolt", "desc": "Casts a 2000–2500 Shadow Bolt on a random non-tank target." },
+    { "id": 2, "name": "Rain of Fire", "desc": "Deals 925–1075 Fire damage every 2 seconds for 6 seconds in an area." }
+  ],
+  "adds": [
+    {
+      "name": "Flamewaker Elites",
+      "spells": [
+        { "id": 1, "name": "Fist of Ragnaros", "desc": "Stuns nearby enemies for 4 seconds." },
+        { "id": 2, "name": "Sunder Armor", "desc": "Reduces the target's armor by 1000 per stack for 20 seconds, stacking up to 20 times." },
+        { "id": 3, "name": "Strike", "desc": "Strikes an enemy, dealing normal damage plus 35." }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "classes": ["Priest"],
+      "desc": "Apply Shadow Protection to the entire raid."
+    }
+  ],
+  "consumables": [
+    {
+      "id": "free_action_potion",
+      "quantity": 1,
+      "classes": ["tank", "melee"]
+    },
+    {
+      "id": "shadow_protection",
+      "quantity": 2,
+      "classes": ["caster", "healer", "melee", "tank"]
+    },
+    {
+      "id": "fire_protection",
+      "quantity": 1,
+      "classes": ["caster", "healer", "melee", "tank"]
+    }
+  ],
+  "strategy": "Pre-pot a GSPP and a GFPP. Kill the adds first (AOE and cleave allowed). Melee should use a Free Action Potion to avoid being stunned by Fist of Ragnaros. Avoid Rain of Fire at all times."
+},
 
     {
   "id": "garr",
   "name": "Garr",
-  "mapPos": { "top": 70, "left": 31 },
+  "mapPos": { "top": 76, "left": 28 },
   "image": ["/images/bosses/garr.png"],
   "position": ["/images/position/garr.png"],
   "mainMechanic": "Dispels player buffs; using many low-value buffs to protect important ones or boon for this fight.",
@@ -200,7 +248,7 @@
     {
   "id": "shazzrah",
   "name": "Shazzrah",
-  "mapPos": { "top": 86, "left": 55 },
+  "mapPos": { "top": 89, "left": 53 },
   "image": ["/images/bosses/shazzrah.png"],
   "position": [ "/images/position/shazzrah1.png", 
   "/images/position/shazzrah2.png" ],
@@ -251,7 +299,7 @@
     {
   "id": "golemagg",
   "name": "Golemagg the Incinerator",
-  "mapPos": { "top": 58, "left": 69 },
+  "mapPos": { "top": 61, "left": 70 },
   "image": ["/images/bosses/golemagg.png"],
   "position": ["/images/position/golemagg.png"],
   "mainMechanic": "Deals heavy damage to melee; watch your debuff stacks.",
@@ -307,7 +355,7 @@
     {
   "id": "sulfuron",
   "name": "Sulfuron Harbinger",
-  "mapPos": { "top": 84, "left": 83 },
+  "mapPos": { "top": 86, "left": 85 },
   "image": ["/images/bosses/sulfuron.png"],
   "position": ["/images/position/sulfuron.png"],
   "mainMechanic": "Kick Dark Mending, then nuke adds.",
@@ -367,7 +415,7 @@
     {
   "id": "majordomo",
   "name": "Majordomo Executus",
-  "mapPos": { "top": 66, "left": 84 },
+  "mapPos": { "top": 66, "left": 87 },
   "image": ["/images/bosses/majordomo.png"],
   "position": ["/images/position/majordomo.png"],
   "mainMechanic": "Control the fight, always focus the new skull target. Avoid AoE or cleave.",
@@ -431,7 +479,7 @@
     {
   "id": "ragnaros",
   "name": "Ragnaros",
-  "mapPos": { "top": 54, "left": 56 },
+  "mapPos": { "top": 56, "left": 57 },
   "image": ["/images/bosses/ragnaros.png"],
   "position": ["/images/position/ragnaros.png"],
   "mainMechanic": "Melees, be careful with knockbacks. Mana users should be aware of lava exit paths.",
@@ -470,26 +518,27 @@
   ],
   "trash": [
     {
-  "id": "lava-elemental",
-  "name": "Lava Elemental",
-  "mapPos": [
-    { "top": 35, "left": 65 },
-    { "top": 45, "left": 75 }
-  ],
-  "image": ["/images/trash/lava-elemental.png"],
-  "mainMechanic": "Pyroclast Barrage - Deals 1500 fire damage over 6 seconds and stuns the target.",
-  "strategy": "Tank should face them away from the raid. For these packs, it's always good to prepot a GFPP."
-}
-,
-    {
   "id": "firelord",
   "name": "Firelord",
   "mapPos": [
-    { "top": 16, "left": 37 },
-    { "top": 15, "left": 34 },
-    { "top": 45, "left": 75 },
-    { "top": 19, "left": 50 },
-    { "top": 12, "left": 42 }
+  { "top": 14, "left": 33 },
+  { "top": 17, "left": 34 },
+  { "top": 11, "left": 41 },
+  { "top": 9, "left": 37 },
+  { "top": 24, "left": 41 },
+  { "top": 53, "left": 32 },
+  { "top": 58, "left": 31 },  
+  { "top": 28, "left": 53 },
+  { "top": 36, "left": 43 },
+  { "top": 53, "left": 39 },
+  { "top": 65, "left": 30 },
+  { "top": 74, "left": 56 },
+  { "top": 71, "left": 65 },
+  { "top": 80, "left": 74 },
+  { "top": 79, "left": 80 },
+  { "top": 72, "left": 80 },
+  { "top": 77, "left": 83 },
+  { "top": 53, "left": 73 }
   ],
   "image": ["/images/trash/firelord.png"],
   "mainMechanic": "Can summon Lava Spawns. Focus on killing the adds instead of Firelord.",
@@ -497,38 +546,43 @@
 }
 ,
     {
-  "id": "molten-giant",
-  "name": "Molten Giant",
+  "id": "duo-giant",
+  "name": "Duo Giant",
   "mapPos": [
-    { "top": 20, "left": 32 },
+    { "top": 19, "left": 31 },
     { "top": 13, "left": 35 },
-    { "top": 23, "left": 51 }
+    { "top": 23, "left": 51 },
+    { "top": 39, "left": 34 },
+    { "top": 53, "left": 36 },
+    { "top": 58, "left": 37 },
+    { "top": 41, "left": 40 },
+    { "top": 74, "left": 34 },
+    { "top": 30, "left": 46 },
+    { "top": 61, "left": 32 }
   ],
   "image": ["/images/trash/molten-giant.png"],
-  "mainMechanic": "Stomps up to 8 nearby enemies.",
-  "strategy": "Always linked with another Molten Giant or Molten Destroyer. Let the tank separate them before engaging."
+  "mainMechanic": "Stomps up to 8 nearby enemies, Can easily nuke a non-tank",
+  "strategy": "Let the tank separate them before engaging. Molten Giant can stomp up to 8 nearby ennemies and  Molten Destroyer Deals around 1000 damage to nearby enemies. Hits fast and can perform an instant attack on its target "
 }
 ,
-    {
-  "id": "molten-destroyer",
-  "name": "Molten Destroyer",
-  "mapPos": [
-    { "top": 18, "left": 32 },
-    { "top": 12, "left": 36 },
-    { "top": 25, "left": 51 }
-  ],
-  "image": ["/images/trash/molten-destroyer.png"],
-  "mainMechanic": "Can easily nuke a non-tank, watch your threat.",
-  "strategy": "Deals around 1000 damage to nearby enemies. Hits fast and can perform an instant attack on its target."
-}
-,
+
     {
   "id": "ancien-core-hound",
   "name": "Ancien Core Hound",
   "mapPos": [
-    { "top": 73, "left": 43 },
-    { "top": 28, "left": 49 },
-    { "top": 16, "left": 41 }
+    { "top": 16, "left": 43 },
+    { "top": 12, "left": 44 },
+    { "top": 31, "left": 51 },
+    { "top": 74, "left": 42 },
+    { "top": 71, "left": 27 },
+    { "top": 75, "left": 31 },
+    { "top": 67, "left": 69 },
+    { "top": 80, "left": 77 },
+    { "top": 55, "left": 80 },
+    { "top": 52, "left": 71 },
+    { "top": 70, "left": 77 },
+    { "top": 32, "left": 40 },
+    { "top": 50, "left": 35 }
   ],
   "image": ["/images/trash/ancien-core-hound.png"],
   "mainMechanic": "Applies a random debuff to the raid. Be ready to dispel.",
@@ -541,7 +595,9 @@
   "mapPos": [
     { "top": 40, "left": 65 },
     { "top": 30, "left": 67 },
-    { "top": 27, "left": 66 }
+    { "top": 27, "left": 66 },
+    { "top": 27, "left": 70 },
+    { "top": 25, "left": 67 }
   ],
   "image": ["/images/trash/core-hound-packs.png"],
   "mainMechanic": "All must die at the same time.",
@@ -553,7 +609,8 @@
   "name": "Flame Imps",
   "mapPos": [
     { "top": 30, "left": 57.5 },
-    { "top": 33, "left": 61 }
+    { "top": 33, "left": 61 },
+    { "top": 40, "left": 60 }
   ],
   "image": ["/images/trash/flame-imps.png"],
   "mainMechanic": "Let the tank build threat, casters unleash AoE, melees be ready to pick up any imp lost by the tank.",
@@ -564,8 +621,17 @@
   "id": "lava-surger",
   "name": "Lava Surger",
   "mapPos": [
-    { "top": 14, "left": 38 },
-    { "top": 45, "left": 75 }
+   { "top": 15, "left": 37 },
+   { "top": 31, "left": 55 },
+   { "top": 35, "left": 58 },
+   { "top": 39, "left": 63 },
+   { "top": 37, "left": 61 },
+   { "top": 36, "left": 37 },
+   { "top": 59, "left": 40 },
+   { "top": 68, "left": 49 },
+   { "top": 63, "left": 63 },
+   { "top": 48, "left": 75 },
+   { "top": 77, "left": 78 }
   ],
   "image": ["/images/trash/lava-surger.png"],
   "mainMechanic": "Charges the furthest player, knocking back all enemies in its path.",
@@ -576,10 +642,17 @@
   "id": "lava-annihilator",
   "name": "Lava Annihilator",
   "mapPos": [
-    { "top": 17, "left": 35 },
-    { "top": 45, "left": 75 },
-    { "top": 9, "left": 38 },
-    { "top": 8, "left": 40 }
+    { "top": 8, "left": 38 },
+    { "top": 16, "left": 50 },
+    { "top": 19, "left": 52 },
+    { "top": 33, "left": 49 },
+    { "top": 39, "left": 42 },
+    { "top": 48, "left": 39 },
+    { "top": 54, "left": 37 },
+    { "top": 64, "left": 35 },
+    { "top": 73, "left": 33 },
+    { "top": 69, "left": 60 },
+    { "top": 47, "left": 72 }
   ],
   "image": ["/images/trash/lava-annihilator.png"],
   "mainMechanic": "Requires a taunt rotation; melees without plate armor should stay out.",
@@ -593,8 +666,16 @@
   "id": "lava-packs",
   "name": "Lava Packs",
   "mapPos": [
-    { "top": 35, "left": 65 },
-    { "top": 45, "left": 75 }
+    { "top": 79, "left": 49 },
+    { "top": 75, "left": 53 },
+    { "top": 84, "left": 50 },
+    { "top": 82, "left": 53 },
+    { "top": 86, "left": 58 },
+    { "top": 79, "left": 58 },
+    { "top": 72, "left": 58 },
+    { "top": 68, "left": 62 },
+    { "top": 67, "left": 73 },
+    { "top": 75, "left": 75 }
   ],
   "image": ["/images/trash/firewalker.png"],
   "mainMechanic": "Deadliest pack with Mind Control; focus Firewalker first, banish Lava Elemental or Lava Reaver.",

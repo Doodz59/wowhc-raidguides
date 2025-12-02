@@ -53,18 +53,16 @@ export default function RaidRoutes({ raidId }) {
       </svg>
 
       <div className="absolute top-4 left-4 flex gap-4 pointer-events-auto z-20">
-        {routes.map((route) => {
-          const isActive = activeRoute === route.id;
-          return (
-            <button
-              key={route.id}
-              onClick={() => setActiveRoute(isActive ? null : route.id)}
-              onMouseEnter={() => setActiveRoute(route.id)}
-              onMouseLeave={() => setActiveRoute(null)}
-              className={`raidroute-btn ${isActive ? "active" : ""}`}
-            >
-              {route.name}
-            </button>
+  {routes.map((route) => {
+    const isActive = activeRoute === route.id;
+    return (
+      <button
+        key={route.id}
+        onClick={() => setActiveRoute(isActive ? null : route.id)}
+        className={`raidroute-btn ${isActive ? "active" : ""}`}
+      >
+        {route.name}
+      </button>
           );
         })}
       </div>

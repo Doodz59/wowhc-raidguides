@@ -1,7 +1,10 @@
 {
   "id": "blackwing-lair",
   "name": "Blackwing Lair",
-  "description": "Nefarion's home",
+  "description": ["Blackwing Lair (BWL) is the second major raid in WoW Classic, and it represents a significant step up in difficulty compared to Molten Core.", 
+  "The mechanics are more complex, coordination is critical, and several encounters can quickly overwhelm an unprepared raid (e.g., Razorgore The Untamed, Vaelastrasz The Corrupt , Firemaw, the Suppression Room, Chromaggus, Nefarian).", 
+  "While BWL doesn’t require special gear to enter, having solid pre-raid items, proper consumables, and basic encounter knowledge will greatly increase your chances of surviving.",
+  "As a new player, your primary objective remains the same: stay alive and support your team. To achieve this, make sure to read this guide thoroughly, follow your Raid Leader’s instructions, and ask questions whenever something is unclear. BWL is challenging but very rewarding once you understand the flow of each encounter — stay focused, communicate, and enjoy the experience."],
   "consumables": [ 
   {
       "id": "flask_titan",
@@ -566,122 +569,111 @@
   ],
   "trash": [
     {
-  "id": "death-talon-captain",
-  "name": "Death Talon Captain",
-  "mapPos": [
-    { "top": 35, "left": 65 },
-    { "top": 45, "left": 75 }
-  ],
-  "image": ["/images/trash/death-talon-captain.png"],
-  "mainMechanic": "Pyroclast Barrage - Deals 1500 fire damage over 6 seconds and stuns the target.",
-  "strategy": "Tank should face them away from the raid. For these packs, it's always good to prepot a GFPP."
-}
-,
-    {
-  "id": "death-talon-seether",
-  "name": "Death Talon Seether",
-  "mapPos": [
-    { "top": 16, "left": 37 },
-    { "top": 15, "left": 34 },
-    { "top": 45, "left": 75 },
-    { "top": 19, "left": 50 },
-    { "top": 12, "left": 42 }
-  ],
-  "image": ["/images/trash/death-talon-seether.png"],
-  "mainMechanic": "Can summon Lava Spawns. Focus on killing the adds instead of Firelord.",
-  "strategy": "Interrupt Firelord's casts and prioritize the adds first. These shares spawn points with Lava Annihilator."
-}
-,
-    {
-  "id": "death-talon-flamescale",
-  "name": "Death Talon Flamescale",
-  "mapPos": [
-    { "top": 20, "left": 32 },
-    { "top": 13, "left": 35 },
-    { "top": 23, "left": 51 }
-  ],
-  "image": ["/images/trash/death-talon-flamescale.png"],
-  "mainMechanic": "Stomps up to 8 nearby enemies.",
-  "strategy": "Always linked with another Molten Giant or Molten Destroyer. Let the tank separate them before engaging."
-}
-,
-    {
-  "id": "death-talon-wyrmkin",
-  "name": "Death Talon Wyrmkin",
-  "mapPos": [
-    { "top": 18, "left": 32 },
-    { "top": 12, "left": 36 },
-    { "top": 25, "left": 51 }
-  ],
-  "image": ["/images/trash/death-talon-wyrmkin.png"],
-  "mainMechanic": "Can easily nuke a non-tank, watch your threat.",
-  "strategy": "Deals around 1000 damage to nearby enemies. Hits fast and can perform an instant attack on its target."
-}
-,
-    {
+      "id":"deah-talon-pack",
+      "name":"Death Talon Pack",
+      "mapPos":[
+        { "top": 35, "left": 27 },
+        { "top": 34, "left": 19 }
+
+      ],
+      "image": ["/images/trash/deah-talon-pack.png"],
+      "mainMechanic": "Kill order : Seether, Flamescale, Wyrmkin, Captain.",
+  "strategy": "Druid will spam sleep on Flamescale during the encounter, a tank will take Wyrmkin LoS and facing them away from raid, a hunter will kite Captain. During this time raid will kill Seether, then Flamescale then Wyrmkin. Once they all dead hunter will feign death and everyone kill Captain."
+    },    
+       {
   "id": "death-talon-hatcher",
   "name": "Death Talon Hatcher",
   "mapPos": [
-    { "top": 73, "left": 43 },
-    { "top": 28, "left": 49 },
-    { "top": 16, "left": 41 }
+    { "top": 43, "left": 16 },
+    { "top": 41, "left": 11 },
+    { "top": 46, "left": 11 },
+    { "top": 43, "left": 7 },
+    { "top": 49, "left": 7 },
+    { "top": 46, "left": 3 },
+    { "top": 59, "left": 8 },
+    { "top": 55, "left": 9 },
+    { "top": 58, "left": 13 },
+    { "top": 53, "left": 13 },
+    { "top": 55, "left": 18 }
+
   ],
   "image": ["/images/trash/death-talon-hatcher.png"],
-  "mainMechanic": "Applies a random debuff to the raid. Be ready to dispel.",
-  "strategy": "Tank should face it away from the raid group. Mages and Paladins should be ready to dispel."
+  "mainMechanic": "Applies a stacking debuff to the raid. Pull welps around him.",
+  "strategy": "he has a 'aura' Growing fire dealing 50 fire damage /stack. also cast flamestrike on his current target. Hunter watch rogues position when you pull it. Can be sleeped by druid if the pull is too big"
 }
 ,
       {
   "id": "blackwing-taskmaster",
   "name": "Blackwing Taskmaster",
   "mapPos": [
-    { "top": 40, "left": 65 },
-    { "top": 30, "left": 67 },
-    { "top": 27, "left": 66 }
+    { "top": 41, "left": 14 },
+    { "top": 49, "left": 3 },
+    { "top": 61, "left": 6 }
   ],
   "image": ["/images/trash/blackwing-taskmaster.png"],
-  "mainMechanic": "All must die at the same time.",
-  "strategy": "Time for big AoE. Melees should spread their damage and focus the one with the most HP."
+  "mainMechanic": "Kick healing circle.",
+  "strategy": "Pattroling by pack of three, they have a shadow shock dealing 1200-1400 damage, can also cast healing cirle. Can be mind controlled if pull is too big."
 }
 ,
        {
   "id": "corrupted-whelp",
   "name": "Corrupted Bronze/Red/Blue/Green Whelp",
   "mapPos": [
-    { "top": 30, "left": 57.5 },
-    { "top": 33, "left": 61 }
+    { "top": 43, "left": 12 },
+    { "top": 45, "left": 9 },
+    { "top": 46, "left": 7 },
+    { "top": 47, "left": 5 },
+    { "top": 45, "left": 14 },
+    { "top": 53, "left": 16 },
+    { "top": 56, "left": 15 },
+    { "top": 56, "left": 12 },
+    { "top": 57, "left": 10 },
+    { "top": 59, "left": 11 }
   ],
   "image": ["/images/trash/corrupted-whelp.png"],
-  "mainMechanic": "Let the tank build threat, casters unleash AoE, melees be ready to pick up any imp lost by the tank.",
-  "strategy": "They deal fire damage. Ideally, let the tank build enough threat so no imp escapes, otherwise it will burn your GFPP. If you AoE too early, it could lead to a wipe, so hold a bit before starting."
+  "mainMechanic": "annoying little trash respawning quickly. Shaman do not drop totems in suppression room",
+  "strategy": "just kill it, carefull if big pull happen"
 }
 ,
        {
   "id": "blackwing-warlock",
   "name": "Blackwing Warlock",
   "mapPos": [
-    { "top": 14, "left": 38 },
-    { "top": 45, "left": 75 }
+    { "top": 33, "left": 49 },
+    { "top": 34, "left": 50 },
+    { "top": 32, "left": 55 },
+    { "top": 33, "left": 53 },
+    { "top": 21, "left": 54 },
+    { "top": 23, "left": 52 },
+    { "top": 14, "left": 55 },
+    { "top": 16, "left": 55 },
+    { "top": 7, "left": 61 },
+    { "top": 8, "left": 60 },
+    { "top": 17, "left": 64 },
+    { "top": 16, "left": 62 },
+    { "top": 14, "left": 70 },
+    { "top": 12, "left": 68 }
   ],
   "image": ["/images/trash/blackwing-warlock.png"],
-  "mainMechanic": "Charges the furthest player, knocking back all enemies in its path.",
-  "strategy": "Assign a hunter to soak the charge, or have everyone stack at the same point. Can also be banished."
+  "mainMechanic": "Cast 2 shadow bolt at time, one on target one on random. Prepot GSPP before each fight if you are under 6k HP",
+  "strategy": "Part of pack with spellbinder, overseer and Technician. They are the first target to be killed. Can cast shadowbolt volley (1500-1900 damage) and rain of fire (925-1075 damage). If they aren't dead after 30sec they will start summon demon."
 }
 ,
        {
   "id": "blackwing-spellbinder",
   "name": "Blackwing Spellbinder",
   "mapPos": [
-    { "top": 17, "left": 35 },
-    { "top": 45, "left": 75 },
-    { "top": 9, "left": 38 },
-    { "top": 8, "left": 40 }
+    { "top": 33, "left": 50 },
+    { "top": 32, "left": 54 },
+    { "top": 15, "left": 56 },
+    { "top": 8, "left": 62 },
+    { "top": 13, "left": 68 },
+    { "top": 16, "left": 63 }
   ],
   "image": ["/images/trash/blackwing-spellbinder.png"],
-  "mainMechanic": "Requires a taunt rotation; melees without plate armor should stay out.",
-  "strategy": [
-    "Can easily nuke characters without plate armor, so rogues, feral druids, and shamans should stay out of this fight. Tanks and warrior DPS will use a taunt rotation; warriors should equip a shield.",
-    "Shares spawn with Firelord."
+  "mainMechanic": "Kill them last, kite or tank it away from raid.",
+  "strategy": ["Part of pack with Warlock, overseer and Technician. They die last, They can polymorph close target, Flamestrike (1250 - 1450 initial hit, 360 - 365 DoT)  on current target. A hunter will kite them or warrior tank them away from raid "
+    
   ]
 }
 ,    
@@ -689,40 +681,45 @@
   "id": "death-talon-overseer",
   "name": "Death Talon Overseer",
   "mapPos": [
-    { "top": 35, "left": 65 },
-    { "top": 45, "left": 75 }
+    { "top": 25, "left": 63 },
+    { "top": 45, "left": 75 },
+    { "top": 24, "left": 61 },
+    { "top": 25, "left": 62 },
+    { "top": 33, "left": 54 },
+    { "top": 22, "left": 53 },
+    { "top": 15, "left": 54 },
+    { "top": 6, "left": 62 },
+    { "top": 17, "left": 63 },
+    { "top": 13, "left": 69 }
   ],
   "image": ["/images/trash/death-talon-overseer.png"],
-  "mainMechanic": "Deadliest pack with Mind Control; focus Firewalker first, banish Lava Elemental or Lava Reaver.",
+  "mainMechanic": "Hit hard, cleave hard",
   "strategy": [
-    "This pack is even deadlier than some bosses. Good coordination is required.",
-    "Firewalker casts a 3000 fireball on a random target, can cast quickly and twice. If you have less than 6000 HP, consider it Russian roulette.",
-    "Flameguard has a fire aura; melees should stay out to avoid burning GFPP. Let casters handle it.",
-    "Lava Elemental casts 1500 fire damage over 6 sec and stuns if facing the raid. It can also hit its main target hard, so watch threat.",
-    "Lava Reaver hits hard non-melee tanks and cleaves.",
-    "On pull, casters should pre-cast on Firewalker to take it down fast. Warlocks will banish Lava Elemental and Lava Reaver. Once Firewalker is dead, handle mobs one by one. Prepot a GFPP and use another if you take fire damage."
+    "They can cleave (Medium-high chance on hit, triggers at around 25% of attacks)Tank and 2 extra targets at 360 degrees.They  cast fire shock (1050 - 1250 fire damage). Melees max range, and watch your threat"
   ]
 },
     {
   "id": "death-talon-wyrmguard",
   "name": "Death Talon Wyrmguard",
   "mapPos": [
-    { "top": 35, "left": 65 },
-    { "top": 45, "left": 75 }
+    { "top": 37, "left": 85 },
+    { "top": 36, "left": 84 },
+    { "top": 35, "left": 83 },
+    { "top": 18, "left": 66 },
+    { "top": 17, "left": 68 },
+    { "top": 16, "left": 69 },
+    { "top": 24, "left": 62 }
   ],
   "image": ["/images/trash/death-talon-wyrmguard.png"],
-  "mainMechanic": "Deadliest pack with Mind Control; focus Firewalker first, banish Lava Elemental or Lava Reaver.",
-  "strategy": [
-    "This pack is even deadlier than some bosses. Good coordination is required.",
-    "Firewalker casts a 3000 fireball on a random target, can cast quickly and twice. If you have less than 6000 HP, consider it Russian roulette.",
-    "Flameguard has a fire aura; melees should stay out to avoid burning GFPP. Let casters handle it.",
-    "Lava Elemental casts 1500 fire damage over 6 sec and stuns if facing the raid. It can also hit its main target hard, so watch threat.",
-    "Lava Reaver hits hard non-melee tanks and cleaves.",
-    "On pull, casters should pre-cast on Firewalker to take it down fast. Warlocks will banish Lava Elemental and Lava Reaver. Once Firewalker is dead, handle mobs one by one. Prepot a GFPP and use another if you take fire damage."
+  "mainMechanic": "mini boss, hit hard, random affix, random vulnerability",
+  "strategy": ["Green - Single target sleep on the main tank. An offtank must be ready to pick up the loose wyrmguard until the effect wears off. Should be killed first as they take up tanking resources.",
+"Red - Heavy fire damage. Extra healing required but otherwise not dangerous. Usually the second to go down if a green wyrmguard is present.",
+"Black - 800 to 1200 Fire Damage applied directly to the tank. Does not apply a debuff and you'll need to check the Battle Log to notice it. Treat the same way as Red brood powers are.",
+"Blue - Reduced attack speed and reduced movement speed. They do the least overall damage but are harder to establish aggro on due to the slowing effects. Blue wyrmguards should be killed last, unless a bronze is present.",
+"Bronze - Main tank is constantly sent spinning, making it hard for them to build aggro. In addition, nearby players will take cleave damage. melees stay out. Bronze Wyrmguards should be killed last.",
+"Each wyrmguard will have a 300% weakness to a certain element (Frost, Fire, Shadow, Arcane, or Nature). All other magic damage is reduced by 75%. Because DPS is extremely lopsided in these pulls, it is very easy for casters to pull aggro through overnuking"
+
   ]
 }
-
-    
-
-  ]
+ ]
 }

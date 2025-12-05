@@ -25,6 +25,11 @@
       "id": "stamina_food",
       "quantity": 8,
       "classes": ["melee", "tank", "caster", "healer"]
+    },
+    {
+      "id": "shadow_protection",
+      "quantity": 6,
+      "classes": ["tank", "caster", "healer", "melee"]
     }
   ],
   "items":[

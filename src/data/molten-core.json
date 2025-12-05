@@ -82,7 +82,7 @@
    {
   "id": "magmadar",
   "name": "Magmadar",
-  "mapPos": { "top": 17, "left": 71 },
+  "mapPos": { "top": 19, "left": 71 },
   "image": ["/images/bosses/magmadar.png"],
   "position": ["/images/position/magmadar.png"],
   "mainMechanic": "Covers the room with fire; avoid all fire patches, they deal heavy damage.",
@@ -595,9 +595,9 @@
   "mapPos": [
     { "top": 40, "left": 65 },
     { "top": 30, "left": 67 },
-    { "top": 27, "left": 66 },
-    { "top": 27, "left": 70 },
-    { "top": 25, "left": 67 }
+    { "top": 27, "left": 69 },
+   { "top": 23, "left": 68 },
+    { "top": 24, "left": 71 }
   ],
   "image": ["/images/trash/core-hound-packs.png"],
   "mainMechanic": "All must die at the same time.",

@@ -8,23 +8,20 @@ import consumablesDataArray from '../data/consumables.json';
 import Items from "../components/Items";
 import itemsDataArray from "../data/items.json";
 
-
 export default function Raid() {
   const { raidId } = useParams();
   const [raid, setRaid] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
-  
   const consumablesData = {};
   consumablesDataArray.forEach(c => {
     consumablesData[c.id] = c;
   });
-  const itemsData = {};
-itemsDataArray.forEach(i => {
-  itemsData[i.id] = i;
-});
 
+  const itemsData = {};
+  itemsDataArray.forEach(i => {
+    itemsData[i.id] = i;
+  });
 
   useEffect(() => {
     let isMounted = true;
@@ -51,12 +48,45 @@ itemsDataArray.forEach(i => {
   if (loading) return <div className="text-gray-400 p-4">Loading raid...</div>;
   if (!raid) return <div className="text-gray-400 p-4">Raid not found.</div>;
 
+  // 🟡 Detection World Boss
+  const isWorldBoss = raid.id === "world-boss";
 
+  // 🟡 WORLD BOSS MODE : simple display only bosses + description
+  if (isWorldBoss) {
+    return (
+      <div className="p-6 text-gray-200">
 
+        <div className="p-6 text-gray-200 leading-relaxed text-justify space-y-4">
+          <h1 className="text-3xl font-heading text-gold mb-4">{raid.name}</h1>
+          <p className="mb-6">
+            <LinkifyText text={raid.description} raid={raid} />
+          </p>
+        </div>
+
+        {raid.bosses?.length > 0 && (
+          <>
+            <h2 className="text-2xl font-heading text-gold mt-6 mb-4">World Bosses</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {raid.bosses.map(boss => (
+                <BossCard key={boss.id} boss={boss} raidId={raid.id} type="boss" />
+              ))}
+            </div>
+          </>
+        )}
+
+        <div className="mt-8">
+          <Link to="/" className="text-gold hover:underline">← Back to Raids</Link>
+        </div>
+      </div>
+    );
+  }
+
+  // 🟢 NORMAL RAID MODE
   const consumablesMap = {};
+  const itemsMap = {};
 
   const addConsumables = (items = []) => {
-    items.forEach(item => {
+    items?.forEach(item => {
       const global = consumablesData[item.id] || {};
       const key = item.id;
 
@@ -82,61 +112,52 @@ itemsDataArray.forEach(i => {
       }
     });
   };
-const itemsMap = {};
 
-const addItems = (items = []) => {
-  items.forEach(item => {
-    const global = itemsData[item.id] || {};
-    const key = item.id;
+  const addItems = (items = []) => {
+    items?.forEach(item => {
+      const global = itemsData[item.id] || {};
+      const key = item.id;
 
-    const entry = {
-      id: key,
-      name: global.name || item.name || "Unnamed item",
-      icon: global.icon || item.icon || "/images/items/default.png",
-      unique: global.unique ?? item.unique ?? true,
-    };
+      const entry = {
+        id: key,
+        name: global.name || item.name || "Unnamed item",
+        icon: global.icon || item.icon || "/images/items/default.png",
+        unique: global.unique ?? item.unique ?? true,
+      };
 
-    
-    if (entry.unique) {
-      if (!itemsMap[key]) itemsMap[key] = { ...entry, quantity: 1 };
-      return;
-    }
+      if (entry.unique) {
+        if (!itemsMap[key]) itemsMap[key] = { ...entry, quantity: 1 };
+        return;
+      }
 
-    
-    if (!itemsMap[key]) {
-      itemsMap[key] = { ...entry, quantity: item.quantity || 0 };
-    } else {
-      itemsMap[key].quantity += item.quantity || 0;
-    }
-  });
-};
+      if (!itemsMap[key]) {
+        itemsMap[key] = { ...entry, quantity: item.quantity || 0 };
+      } else {
+        itemsMap[key].quantity += item.quantity || 0;
+      }
+    });
+  };
 
- 
+  // Global + bosses + trash
   addConsumables(raid.consumables);
   addItems(raid.items);
 
-
- 
   const allBosses = [...(raid.bosses || []), ...(raid.trash || [])];
   allBosses.forEach(boss => {
-  addConsumables(boss.consumables);
-  addItems(boss.items);
-});
-
+    addConsumables(boss.consumables);
+    addItems(boss.items);
+  });
 
   const totalConsumables = Object.values(consumablesMap);
-
- 
 
   return (
     <div className="p-6 text-gray-200">
       <div className="p-6 text-gray-200 leading-relaxed text-justify space-y-4">
-  <h1 className="text-3xl font-heading text-gold mb-4">{raid.name}</h1>
-  <p className="mb-6">
-    <LinkifyText text={raid.description} raid={raid} />
-  </p>
-</div>
-
+        <h1 className="text-3xl font-heading text-gold mb-4">{raid.name}</h1>
+        <p className="mb-6">
+          <LinkifyText text={raid.description} raid={raid} />
+        </p>
+      </div>
 
       {totalConsumables.length > 0 && (
         <div>
@@ -144,13 +165,13 @@ const addItems = (items = []) => {
           <Consumables items={totalConsumables} />
         </div>
       )}
-      {Object.values(itemsMap).length > 0 && (
-  <div className="mt-8">
-    <h2 className="text-xl font-bold mb-3">Raid items</h2>
-    <Items items={Object.values(itemsMap)} />
-  </div>
-)}
 
+      {Object.values(itemsMap).length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-xl font-bold mb-3">Raid items</h2>
+          <Items items={Object.values(itemsMap)} />
+        </div>
+      )}
 
       <h2 className="text-2xl font-heading text-gold mt-10 mb-4">Interactive Map</h2>
       <RaidMap raidId={raid.id} raid={raid} />

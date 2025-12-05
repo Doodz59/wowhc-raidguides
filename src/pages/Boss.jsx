@@ -87,7 +87,11 @@ itemsDataArray.forEach(i => {
     <div className="p-6 text-gray-200 overflow-x-hidden">
   
       <h1 className="text-3xl font-heading text-gold mb-2">{boss.name}</h1>
-    
+      {boss.mainMechanic && (
+  <h2 className="text-2xl font-heading text-gold mt-6 mb-2">
+    {boss.mainMechanic}
+  </h2>
+)}
      {mergedConsumables.length > 0 && (
   <>
     <h2 className="text-2xl font-heading text-gold mt-4 mb-2">Consumables</h2>

@@ -1,0 +1,129 @@
+{
+    "id":"onyxia-lair",
+    "name":"Onyxia's Lair",
+    "description":"L'antre",
+    "consumables": [
+    
+    {
+      "id": "elixir_fortitude",
+      "quantity": 1,
+      "classes": ["melee", "tank", "caster", "healer"]
+    },
+    {
+      "id": "rumsey_rum_black_label",
+      "quantity": 2,
+      "classes": ["melee", "tank", "caster", "healer"]
+    },
+      {
+      "id": "stamina_food",
+      "quantity": 2,
+      "classes": ["melee", "tank", "caster", "healer"]
+    }
+  ],
+  "items":[
+    {
+      "id":"drakefire-amulet",
+      "classes":["tank","caster","healer","melee"]
+    }
+  ],
+  "bosses":[
+    {
+  "id": "onyxia",
+  "name": "Onyxia",
+  "mapPos": { "top": 31, "left": 67 },
+  "image": ["/images/bosses/onyxia.png"],
+  "position": [ "/images/position/onyxia1.png", 
+  "/images/position/onyxia2.png",
+"/images/position/onyxia3.png", 
+  "/images/position/onyxia4.png",
+"/images/position/onyxia5.png", 
+  "/images/position/onyxia6.png" ],
+  "mainMechanic": "3phases boss, watch your threat, care for breath.",
+  "spells": [
+    {
+      "id": 1,
+      "name": "Tail sweep (phase 1 & 3)",
+      "desc": "Inflicts 600 to 1000 damage on enemies in a cone behind the caster, knocking them back.."
+    },
+    {
+      "id": 2,
+      "name": "Wing Buffet (phase 1 & 3)",
+      "desc": "Inflicts 563 to 937 damage to enemies in a cone in front of the caster, knocking them back."
+    },
+    {
+        "id":3,
+        "name":"Flame breath (phase 1 & 3)",
+        "desc":"Inflicts 3063 to 3937 Fire damage to enemies in a cone in front"
+    },
+    {
+        "id":4,
+        "name":"Fireball (phase 2)",
+        "desc":"Inflicts 1700 to 2300 Fire damage to all enemies in a selected area"
+    },
+    {
+        "id":5,
+        "name":"Deep Breath (phase 2)",
+        "desc":" Deals 1.5k fire damage every 0.2 seconds "
+    },
+    {
+        "id":6,
+        "name":"Bellowing roar (phase 3)",
+        "desc":"fear all ennemies"
+    },
+    {
+        "id":7,
+        "name":"Onyxian welps (phase 3)",
+        "desc":"Welps will occasionally spawn and attack the raid"
+    },
+    {
+      "id":8,
+      "name":"Heated ground ( phase 3)",
+      "desc":"Cracks spread around the room to start to pulse with lava every several seconds, dealing fire damage to any player hit"
+    }
+  ],
+  "adds": [ ],
+  "roles": [
+    {
+      "classes": ["Mage"],
+      "desc": "Be ready to AOE welps"
+    },
+    {
+      "classes":["warrior"],
+      "desc":"Use anti fear on p3 and off tanks welps"
+    },
+    {
+      "classes":["priest","shaman"],
+      "desc":"Use Fear ward / tremor totem on phase 3"
+    }
+  ],
+  "consumables": [
+    {
+      "id": "fire_protection",
+      "quantity": 2,
+      "classes": ["tank", "caster", "healer", "melee"]
+    }
+  ],
+  "strategy": [
+    "Prepot GFPP. Onyxia is a 3 phase boss, first phase is mostly about don't overthreat tank, and position Onyxia. Once she is about to go phase 2 (65% health) use all your cooldowns",
+    " We want Phase 2 to be as fast as possible to avoid deep breath and too much fireball, if she is about to cast Deep breath watch your position and Onyxia go to the closest safe spot",
+    " Once phase 3 (40%), watch carefully your threat, it will be hard for tank to take it of you. if you have aggro you tank. dps carefully, AOE classes be ready to handle welps.",
+    " Phase 3 also make cracks dealing fire damage, you might take damage due to being feared into, if you see yourself taking damage, pop GFPP. Onyxia have a HUGE hitbox, you can hit her from really far, do that will allow you to avoid being tail sweep or facing her while Flame breath"
+  ]
+}
+  ],
+  "trash":[
+    {
+  "id": "onyxian-warder",
+  "name": "Onyxian Warder",
+  "mapPos": [
+  { "top": 43, "left": 43 },
+  { "top": 58, "left": 44 },
+  { "top": 75, "left": 54 },
+ { "top": 90, "left": 69 }  
+  ],
+  "image": ["/images/trash/onyxian-warder.png"],
+  "mainMechanic": "Fresh 60 melees, stay out, the deal heavy dommage with Fire Nova",
+  "strategy": "they can be dangerous if you pull more than one at the time, their Fire nova deal some heavy fire damage, as fresh melee it's better to stay out and increase your range weapon skill"
+}
+  ]
+}

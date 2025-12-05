@@ -2,32 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function LinkifyText({ text, raid }) {
-  // Sécurité : forcer text en string pour éviter les crashs
   const safeText = typeof text === "string" ? text : String(text ?? "");
 
-  // Construire un dictionnaire pour tous les liens possibles
+  // Sécurisation
+  const bosses = Array.isArray(raid?.bosses) ? raid.bosses : [];
+  const trash = Array.isArray(raid?.trash) ? raid.trash : [];
+
   const links = {};
 
-  raid.bosses.forEach(b => {
-    links[b.name] = `/raid/${raid.id}/boss/${b.id}`;
-  });
+  bosses.forEach(b => { if (b?.name) links[b.name] = `/raid/${raid.id}/boss/${b.id}` });
+  trash.forEach(t => { if (t?.name) links[t.name] = `/raid/${raid.id}/trash/${t.id}` });
 
-  raid.trash.forEach(t => {
-    links[t.name] = `/raid/${raid.id}/trash/${t.id}`;
-  });
+  const names = Object.keys(links);
+  if (names.length === 0) return safeText;
 
-  // Fonction pour échapper les caractères spéciaux dans la regex
   function escapeRegex(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
-  // Regex pour matcher tous les noms connus (échappés)
-  const pattern = new RegExp(
-    Object.keys(links)
-      .map(name => escapeRegex(name))
-      .join("|"),
-    "g"
-  );
+  const pattern = new RegExp(names.map(escapeRegex).join("|"), "g");
 
   const parts = safeText.split(pattern);
   const matches = safeText.match(pattern) || [];
@@ -38,10 +31,7 @@ export default function LinkifyText({ text, raid }) {
         <React.Fragment key={i}>
           {part}
           {matches[i] && (
-            <Link
-              to={links[matches[i]]}
-              className="text-gold underline hover:text-yellow-400"
-            >
+            <Link to={links[matches[i]]} className="text-gold underline hover:text-yellow-400">
               {matches[i]}
             </Link>
           )}

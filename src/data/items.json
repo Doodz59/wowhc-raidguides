@@ -5,5 +5,12 @@
     "icon": "/images/items/onyxia-scale-cloack.png",
     "unique": true
     
+  },
+   {
+    "id": "drakefire-amulet",
+    "name": "Drakefire Amulet",
+    "icon": "/images/items/drakefire-amulet.png",
+    "unique": true
+    
   }
 ]
